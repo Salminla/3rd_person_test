@@ -6,6 +6,8 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
     GameObject CameraFollowObject;
+    [SerializeField]
+    bool invertedVertical = true;
 
     float rotX = 0f;
     float rotY = 0f;
@@ -34,7 +36,11 @@ public class CameraFollow : MonoBehaviour
         float horizontalBoth = horizontalX + mouseX;
         float verticalBoth = verticalY + mouseY;
 
-        rotX += verticalBoth * 150 * Time.deltaTime;
+        if (invertedVertical)
+            rotX += -verticalBoth * 150 * Time.deltaTime;
+        else
+            rotX += verticalBoth * 150 * Time.deltaTime;
+
         rotY += horizontalBoth * 150 * Time.deltaTime;
 
         rotX = Mathf.Clamp(rotX, -80, 80);
