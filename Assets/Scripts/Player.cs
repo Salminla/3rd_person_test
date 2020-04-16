@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     Camera mainCamera;
     [SerializeField]
     GameObject playerCamera;
+    [SerializeField]
+    GameObject pointerObject;
 
     Vector2 lookDirection;
     Vector3 inputs;
@@ -47,7 +49,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerModel = GameObject.Find("PlayerModel");
+        playerModel = GameObject.Find("Thing");
         playerCollider = GetComponent<CapsuleCollider>();
         mainCamera = Camera.main;
 
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
+            StartCoroutine(jumpBuffer());
         }
         if (IsGrounded())
         {
@@ -76,6 +79,7 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+        PointerFunction();
     }
     // All the rigidbody interactions done in FixedUpdate
     void FixedUpdate()
@@ -94,6 +98,7 @@ public class Player : MonoBehaviour
         //Rotation
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
 
+        //Adds slight delay after landing from a jump
         if (isGrounded && !delayOngoing && !delayFinished)
         {
             delayOngoing = true;
@@ -114,11 +119,6 @@ public class Player : MonoBehaviour
             //rb.velocity = new Vector3(rb.velocity.x - 0.1f, rb.velocity.y, rb.velocity.z-0.1f);
         }
 
-        //DEBUG STUFF
-        //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
-        //Debug.Log(GroundMovement);
-        //Debug.Log(sumOfVelocityXZ);
-
         //Jumping
         if (isJumping && isGrounded)
         {
@@ -126,6 +126,7 @@ public class Player : MonoBehaviour
             isJumping = false;
         }
 
+        
         //Camera follow, lerping
         //Vector3 cameraPosition = mainCamera.transform.position + cameraOffset;
         //cameraPosition.y = Mathf.Lerp(mainCamera.transform.position.y, transform.position.y + camVerticalOffset, camLerpVal * Time.deltaTime);
@@ -133,15 +134,20 @@ public class Player : MonoBehaviour
         //cameraPosition.z = Mathf.Lerp(mainCamera.transform.position.z, transform.position.z, camLerpVal * Time.deltaTime);
         //mainCamera.transform.position = cameraPosition;
 
+        //DEBUG STUFF
+        //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
+        //Debug.Log(GroundMovement);
+        //Debug.Log(sumOfVelocityXZ);
+
         //IsGrounded function debugging
         if (isGrounded)
         {
-            playerModel.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.green);
+            playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.green);
             //Debug.Log("Am grounded");
         }
         else
         {
-            playerModel.GetComponent<MeshRenderer>().material.SetColor("_Color", Color.red);
+            playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.red);
         }
         //Debug.Log(colliding);
     }
@@ -149,55 +155,83 @@ public class Player : MonoBehaviour
     bool IsGrounded()
     {
         // Bit shift the index of the layer(9) to get a bit mask
-        int layerMask = 1 << 9;
+        int layerMask = 1 << 8;
 
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        //layerMask = ~layerMask;
+        layerMask = ~layerMask;
 
         //get the radius of the players capsule collider, and make it a tiny bit smaller than that
         float radius = playerCollider.radius * 0.75f;
         float radiusY = playerCollider.radius * 0.60f;
-        //get the position (assuming its right at the bottom) and move it up by almost the whole radius
-        /*
-        Vector3 pos = transform.position + Vector3.down * 0.06f;
-        Vector3 posFront = transform.position + Vector3.down * 0.06f;
-        Vector3 posBack = transform.position + Vector3.down * 0.06f;
-        */
+        
         //returns true if the capsule touches something on that layer
         bool isGroundedL = Physics.CheckCapsule(new Vector3(transform.position.x - gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), 
                                                 new Vector3(transform.position.x + gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), radius, layerMask);
         //Grounding check for 
         bool isGroundedY = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z),
                                                 new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), radiusY, layerMask);
-        //bool isGrounded = Physics.CheckSphere(pos, radius, layerMask);
-        //bool isGroundedFront = Physics.CheckSphere(pos, radius, layerMask);
-        //bool isGroundedBack = Physics.CheckSphere(pos, radius, layerMask);
-        //Physics.Che
-
         if (isGroundedY)
             return true;
         else
             return false;
+        //OLD GROUNDING STUFF
+        //get the position (assuming its right at the bottom) and move it up by almost the whole radius
+        /*
+        Vector3 pos = transform.position + Vector3.down * 0.06f;
+        Vector3 posFront = transform.position + Vector3.down * 0.06f;
+        Vector3 posBack = transform.position + Vector3.down * 0.06f;
+        */
+        //bool isGrounded = Physics.CheckSphere(pos, radius, layerMask);
+        //bool isGroundedFront = Physics.CheckSphere(pos, radius, layerMask);
+        //bool isGroundedBack = Physics.CheckSphere(pos, radius, layerMask);
+        //Physics.Che
     }
+    //Function for the player's pointer in the world
+    void PointerFunction()
+    {
+        // Bit shift the index of the layer(8) and layer(2) to get a bit mask
+        int layerMask1 = 1 << 8;
+        int layerMask2 = 1 << 2;
+        int finalMask = layerMask1 | layerMask2;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        finalMask = ~finalMask;
+
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 100, finalMask))
+        {
+            if (!pointerObject.activeSelf)
+            {
+                Debug.Log("Pointer on");
+                pointerObject.SetActive(true);
+            }
+            //Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            pointerObject.transform.position = hit.point;
+        }
+        else
+        {
+            if (pointerObject.activeSelf)
+            {
+                Debug.Log("Pointer off");
+                pointerObject.SetActive(false);
+            }      
+        }
+    }
+    //Slight delay before being able to move againg after landing
     IEnumerator movementDelay()
     {
         delayFinished = false;
         yield return new WaitForSeconds(.1f);
         delayFinished = true;
     }
-    private void OnCollisionEnter(Collision collision)
+    //Stops player from jumping after landing when pressing the jump button while in the air
+    IEnumerator jumpBuffer()
     {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            colliding = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            colliding = false;
-        }
+        yield return new WaitForSeconds(.1f);
+        isJumping = false;
     }
 }

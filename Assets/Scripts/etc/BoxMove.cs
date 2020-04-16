@@ -17,7 +17,10 @@ public class BoxMove : MonoBehaviour
     private float moveSpeed = 1f;
     [SerializeField]
     private bool loop = true;
-    private bool endReached = false;
+    [SerializeField]
+    [Range(0, 10f)]
+    private float startDelayAmount;
+    private bool endReached = true;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +39,7 @@ public class BoxMove : MonoBehaviour
                 if (waypointIndex >= waypoints.Length - 1)
                 {
                     waypointIndex = 0;
-                    if (!loop)
-                        endReached = true;
+                    endReached = true;
                 }
                 else
                 {
@@ -48,7 +50,9 @@ public class BoxMove : MonoBehaviour
         }
         //Allows to resume looping during runtime.
         if (endReached && loop)
-            endReached = false;
+        {
+            StartCoroutine(StartDelay()); 
+        }
     }
 
     void InitWaypoints()
@@ -63,5 +67,10 @@ public class BoxMove : MonoBehaviour
             Debug.Log(WaypointContainer.transform.GetChild(i).transform);
         }
         targetPosition = waypoints[0].position;
+    }
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(startDelayAmount);
+        endReached = false;
     }
 }
