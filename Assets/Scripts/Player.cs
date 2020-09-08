@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     GameObject playerCamera;
     [SerializeField]
     GameObject pointerObject;
+    [SerializeField]
+    Material playerMaterial;
 
     Vector2 lookDirection;
     Vector3 inputs;
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     private float verticalSpeed = 6;
     [SerializeField]
     private float airSpeed = 7000;
+    private float airSpeedO;
     [SerializeField]
     private float jumpForce = 900f;
 
@@ -30,20 +33,17 @@ public class Player : MonoBehaviour
     private float gCapsuleExtremesX = 0.4f;
     private float gCapsulePosY = 0.15f;
 
-    private float horizontalAxis;
-    private float verticalAxis;
-
-    private float camVerticalOffset = 2;
-    private float camHorizontalOffset = 4;
-    private float camLerpVal = 5;
-
     private bool isJumping = false;
     private bool colliding = false;
     private bool isGrounded;
     private bool delayFinished = true;
     private bool delayOngoing = false;
 
-    Vector3 cameraOffset = new Vector3(4, 3, 0);
+    //MovementSmoothingTestVars
+    public float iAcceleration = 1f;
+    public float iDeceleration = 2f;
+    public float xSmoothed = 0;
+    public float ySmoothed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -54,55 +54,96 @@ public class Player : MonoBehaviour
         mainCamera = Camera.main;
 
         playerCollider.contactOffset = 0.02f;
+
+        airSpeedO = airSpeed;
     }
     //All the Input capturing done in Update
     void Update()
     {
-        //Player movement axis
-        inputs = Vector3.zero;
-        inputs.x = Input.GetAxis("Horizontal");
-        inputs.y = Input.GetAxis("Vertical");
-        inputs = Vector3.ClampMagnitude(inputs, 1f);
-        //horizontalAxis = Input.GetAxis("Horizontal");
-        //verticalAxis = Input.GetAxis("Vertical");
+        InputHandler();
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            isJumping = true;
-            StartCoroutine(jumpBuffer());
-        }
         if (IsGrounded())
-        {
             isGrounded = true;
-        }
         else
-        {
             isGrounded = false;
-        }
+
         PointerFunction();
     }
     // All the rigidbody interactions done in FixedUpdate
     void FixedUpdate()
     {
-        float sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
-        //float c_sumOfVelocity = Mathf.Clamp(sumOfVelocity, 0, 6);
+        PlayerMovement();       
+    }
+    /// <summary>
+    /// Function that handles all of the player's inputs
+    /// </summary>
+    void InputHandler()
+    {
+        // Player movement axis
+        inputs = Vector3.zero;
 
-        //Movement, when player is on the ground
+        inputs.x = InputSmoothing("Horizontal", ref xSmoothed);
+        inputs.y = InputSmoothing("Vertical", ref ySmoothed);
+        
+        inputs = Vector3.ClampMagnitude(inputs, 1f);
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+            StartCoroutine(JumpBuffer());
+        }
+    }
+    // Makes the specified input move smoothly from 0 to 1 and vice-versa.
+    private float InputSmoothing(string axis, ref float smoothed)
+    {
+        float accelerating = Input.GetAxisRaw(axis);
+
+        if (accelerating > 0)
+            smoothed = Mathf.Clamp(smoothed + iAcceleration * Time.deltaTime, -1f, accelerating);
+        else if (accelerating < 0)
+            smoothed = Mathf.Clamp(smoothed - iAcceleration * Time.deltaTime, accelerating, 1f);
+        else
+                smoothed = Mathf.Clamp01(Mathf.Abs(smoothed) - iDeceleration * Time.deltaTime) * Mathf.Sign(smoothed);
+        return smoothed;
+    }
+    /// <summary>
+    /// Function that handles all of the player's movement, using rigidbody
+    /// </summary>
+    void PlayerMovement()
+    {
+
+        float sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
+        float sumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
+
+        // Movement, when player is on the ground
         Vector3 GroundMovement = (transform.forward * horizontalSpeed * inputs.x * Time.deltaTime) + (transform.right * horizontalSpeed * -inputs.y * Time.deltaTime) + new Vector3(0, rb.velocity.y);
         //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * 50, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * 50);
 
-        //Movement when the player is in the air
+        // Movement when the player is in the air
         Vector3 AirMovement = (transform.forward * airSpeed * inputs.x * 100 * Time.deltaTime) + (transform.right * airSpeed * -inputs.y * 100 * Time.deltaTime);
         //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * airSpeed, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * airSpeed);
 
-        //Rotation
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
+        // Rotation
+        Vector3 playerRotation = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
+        rb.transform.eulerAngles = playerRotation;
+        //Quaternion rotation = new Quaternion(playerCamera.transform.rotation.x, playerCamera.transform.rotation.y, playerCamera.transform.rotation.z, 1);
+        //rb.MoveRotation(rotation);
+        //Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+        //rb.MoveRotation(rb.rotation * deltaRotation);
 
-        //Adds slight delay after landing from a jump
+        //rb.drag = sumOfVelocityXZ / 15;
+        rb.drag = 0.2f;
+
+        if (sumOfVelocityXZ > 8)
+            airSpeed = airSpeedO - (sumOfVelocityXZ * 100) / 1.5f;
+        else
+            airSpeed = airSpeedO;
+
+        // Adds slight delay after landing from a jump before switching to GroundMovement
         if (isGrounded && !delayOngoing && !delayFinished)
         {
             delayOngoing = true;
-            StartCoroutine(movementDelay());
+            StartCoroutine(MovementDelay());
         }
         if (isGrounded && delayFinished)
         {
@@ -114,42 +155,39 @@ public class Player : MonoBehaviour
             delayOngoing = false;
             rb.AddForce(AirMovement);
         }
-        if (rb.velocity.magnitude > 6.5f)
-        {
-            //rb.velocity = new Vector3(rb.velocity.x - 0.1f, rb.velocity.y, rb.velocity.z-0.1f);
-        }
 
-        //Jumping
+        // Jumping
         if (isJumping && isGrounded)
         {
             rb.AddForce(new Vector3(0, rb.mass * 5), ForceMode.Impulse);
             isJumping = false;
         }
+        // Nudge if stuck (If stuck in place while the game thinks you are not grounded)
+        if (!IsGrounded() && sumOfVelocityXYZ < 0.01f && isJumping)
+            rb.AddForce(new Vector3(0, rb.mass * 1.5f), ForceMode.Impulse);
 
-        
-        //Camera follow, lerping
-        //Vector3 cameraPosition = mainCamera.transform.position + cameraOffset;
-        //cameraPosition.y = Mathf.Lerp(mainCamera.transform.position.y, transform.position.y + camVerticalOffset, camLerpVal * Time.deltaTime);
-        //cameraPosition.x = Mathf.Lerp(mainCamera.transform.position.x, transform.position.x + camHorizontalOffset, camLerpVal * Time.deltaTime);
-        //cameraPosition.z = Mathf.Lerp(mainCamera.transform.position.z, transform.position.z, camLerpVal * Time.deltaTime);
-        //mainCamera.transform.position = cameraPosition;
-
-        //DEBUG STUFF
+        #region DEBUG STUFF
         //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
         //Debug.Log(GroundMovement);
-        //Debug.Log(sumOfVelocityXZ);
+        Debug.Log("Vel: " + sumOfVelocityXZ.ToString("F2") + "AirDir: " + AirMovement.normalized + "VelDir:" + rb.velocity.normalized
+                    + "Drag: " + rb.drag.ToString("F2") + "ASpeed: " + airSpeed);
+        Debug.DrawRay(transform.position, AirMovement.normalized, Color.yellow);
+        Debug.DrawRay(transform.position, rb.velocity.normalized, Color.red);
 
         //IsGrounded function debugging
         if (isGrounded)
         {
-            playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.green);
+            playerMaterial.color = Color.green;
+            //playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.green);
             //Debug.Log("Am grounded");
         }
         else
         {
-            playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.red);
+            playerMaterial.color = Color.red;
+            //playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.red);
         }
         //Debug.Log(colliding);
+        #endregion
     }
     //Grounding check done with CheckCapsule
     bool IsGrounded()
@@ -161,21 +199,26 @@ public class Player : MonoBehaviour
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
         layerMask = ~layerMask;
 
-        //get the radius of the players capsule collider, and make it a tiny bit smaller than that
+        // get the radius of the players capsule collider, and make it a tiny bit smaller than that
         float radius = playerCollider.radius * 0.75f;
         float radiusY = playerCollider.radius * 0.60f;
-        
-        //returns true if the capsule touches something on that layer
+        float radiusA = playerCollider.radius * 0.80f;
+
+        // returns true if the capsule touches something on that layer
         bool isGroundedL = Physics.CheckCapsule(new Vector3(transform.position.x - gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), 
                                                 new Vector3(transform.position.x + gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), radius, layerMask);
-        //Grounding check for 
+        // Grounding check for 
         bool isGroundedY = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z),
                                                 new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), radiusY, layerMask);
+        // Grounding check for 
+        bool isGroundedA = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.18f, transform.position.z),
+                                                new Vector3(transform.position.x, transform.position.y - 0.18f, transform.position.z), radiusA, layerMask);
         if (isGroundedY)
             return true;
         else
             return false;
-        //OLD GROUNDING STUFF
+
+        #region OLD GROUNDING STUFF
         //get the position (assuming its right at the bottom) and move it up by almost the whole radius
         /*
         Vector3 pos = transform.position + Vector3.down * 0.06f;
@@ -186,8 +229,9 @@ public class Player : MonoBehaviour
         //bool isGroundedFront = Physics.CheckSphere(pos, radius, layerMask);
         //bool isGroundedBack = Physics.CheckSphere(pos, radius, layerMask);
         //Physics.Che
+        #endregion
     }
-    //Function for the player's pointer in the world
+    // Function for the player's pointer in the world
     void PointerFunction()
     {
         // Bit shift the index of the layer(8) and layer(2) to get a bit mask
@@ -210,7 +254,7 @@ public class Player : MonoBehaviour
                 pointerObject.SetActive(true);
             }
             //Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            pointerObject.transform.position = hit.point;
+            pointerObject.transform.position = Vector3.Lerp(pointerObject.transform.position, hit.point, Time.deltaTime * 30);
         }
         else
         {
@@ -221,17 +265,22 @@ public class Player : MonoBehaviour
             }      
         }
     }
-    //Slight delay before being able to move againg after landing
-    IEnumerator movementDelay()
+    // Slight delay before being able to move againg after landing
+    IEnumerator MovementDelay()
     {
         delayFinished = false;
         yield return new WaitForSeconds(.1f);
         delayFinished = true;
     }
-    //Stops player from jumping after landing when pressing the jump button while in the air
-    IEnumerator jumpBuffer()
+    // Stops player from jumping after landing when pressing the jump button while in the air
+    IEnumerator JumpBuffer()
     {
         yield return new WaitForSeconds(.1f);
         isJumping = false;
+    }
+    //DEBUG
+    IEnumerator DebugUpdate()
+    {
+        yield return 0;
     }
 }

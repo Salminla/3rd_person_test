@@ -135,7 +135,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3817139476643713950}
-  m_LocalRotation: {x: -0, y: 0.00021000204, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.00020944304, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 1, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -153,7 +153,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3817139476643713950}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 300
   m_Drag: 0
   m_AngularDrag: 0.02
   m_UseGravity: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   pointerObject: {fileID: 3817139475805940698}
   horizontalSpeed: 300
   verticalSpeed: 300
-  airSpeed: 1500
+  airSpeed: 1000
   jumpForce: 1100
   groundDistance: 5
 --- !u!1001 &3817139475938292362
@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 840647884375753404, guid: 25ad4fa45864b5444ba7650229847648,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d84d8a24342db0f43afd4cd0dae7f445, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25ad4fa45864b5444ba7650229847648, type: 3}
 --- !u!4 &8179523114786724240 stripped

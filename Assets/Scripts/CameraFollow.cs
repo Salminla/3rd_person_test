@@ -7,7 +7,11 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     GameObject CameraFollowObject;
     [SerializeField]
+    GameObject CameraZoomPoint;
+    [SerializeField]
     bool invertedVertical = true;
+
+    Vector3 camInitPos;
 
     float rotX = 0f;
     float rotY = 0f;
@@ -18,6 +22,8 @@ public class CameraFollow : MonoBehaviour
         Vector3 rot = transform.localRotation.eulerAngles;
         rotX = rot.x;
         rotY = rot.y;
+
+        camInitPos = transform.position;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -43,10 +49,15 @@ public class CameraFollow : MonoBehaviour
 
         rotY += horizontalBoth * 150 * Time.deltaTime;
 
-        rotX = Mathf.Clamp(rotX, -80, 80);
+        rotX = Mathf.Clamp(rotX, -80, 70);
 
         Quaternion localRotation = Quaternion.Euler(0.0f, rotY, rotX);
         transform.rotation = localRotation;
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            Camera.main.transform.position = CameraZoomPoint.transform.position;
+        }
     }
 
     void LateUpdate()
@@ -59,7 +70,9 @@ public class CameraFollow : MonoBehaviour
         Transform target = CameraFollowObject.transform;
         //Move towards
         float step = 120 * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-
+        if (!Input.GetKey(KeyCode.Mouse1))
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }    
     }
 }

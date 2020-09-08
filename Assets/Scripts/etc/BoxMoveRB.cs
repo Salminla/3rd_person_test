@@ -65,7 +65,6 @@ public class BoxMoveRB : MonoBehaviour
         for (int i = 0; i < wpCount; i++)
         {
             waypoints[i] = WaypointContainer.transform.GetChild(i).transform;
-            Debug.Log(WaypointContainer.transform.GetChild(i).transform);
         }
         targetPosition = waypoints[0].position;
     }
