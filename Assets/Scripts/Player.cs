@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
     public float xSmoothed = 0;
     public float ySmoothed = 0;
 
+    public UnityEngine.UI.Text debugText1;
+    public UnityEngine.UI.Text debugText2;
+
+    // Swing testing
+    public HingeJoint playerHingePoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +61,9 @@ public class Player : MonoBehaviour
         playerCollider.contactOffset = 0.02f;
 
         airSpeedO = airSpeed;
+
+        // Swing testing
+
     }
     //All the Input capturing done in Update
     void Update()
@@ -147,7 +155,12 @@ public class Player : MonoBehaviour
         }
         if (isGrounded && delayFinished)
         {
-            rb.velocity = GroundMovement;
+            if (GroundMovement.x != 0 || GroundMovement.z != 0)
+            {
+                rb.velocity = GroundMovement;
+            }
+            
+            //rb.AddForce(GroundMovement * 1000);
         }
         else if (!isGrounded)
         {
@@ -169,6 +182,7 @@ public class Player : MonoBehaviour
         #region DEBUG STUFF
         //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
         //Debug.Log(GroundMovement);
+        DebugUI("MoveVect: "+GroundMovement.ToString(), 1);
         Debug.Log("Vel: " + sumOfVelocityXZ.ToString("F2") + "AirDir: " + AirMovement.normalized + "VelDir:" + rb.velocity.normalized
                     + "Drag: " + rb.drag.ToString("F2") + "ASpeed: " + airSpeed);
         Debug.DrawRay(transform.position, AirMovement.normalized, Color.yellow);
@@ -263,6 +277,17 @@ public class Player : MonoBehaviour
                 Debug.Log("Pointer off");
                 pointerObject.SetActive(false);
             }      
+        }
+    }
+    private void DebugUI(string text, int boxNum)
+    {
+        if (boxNum == 1)
+        {
+            debugText1.text = text;
+        }
+        else
+        {
+            Debug.LogError("Incocrrect assignment");
         }
     }
     // Slight delay before being able to move againg after landing
