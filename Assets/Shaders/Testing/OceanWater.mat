@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OceanWater
-  m_Shader: {fileID: -6465566751694194690, guid: 7d0c117f36ca01347824c9fe1503e8f7,
+  m_Shader: {fileID: -6465566751694194690, guid: fadd4f375543c4c47aed0df20c7858f9,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,21 +21,21 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_23E570B9:
-        m_Texture: {fileID: 2800000, guid: ece593af5dd8f694194c25c46439d083, type: 3}
+        m_Texture: {fileID: 2800000, guid: 53328053e1504ee429f309cd9a6673fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_10FD0CF8: 1
+    - Vector1_10FD0CF8: -0.76
     - Vector1_1DB3F9EF: 0.52
-    - Vector1_1E3809F8: 0.474
+    - Vector1_1E3809F8: 0.347
     - Vector1_360DA943: 7.39
     - Vector1_4AC989F5: 0.84
-    - Vector1_6DBCD194: 0.83
+    - Vector1_6DBCD194: 0.6
     - Vector1_717D2CC0: 0.71
     - Vector1_A68AF9DE: 0.24
     - Vector1_D79C78DA: 1.74
     - Vector1_DD8E7D17: 0.84
-    - Vector1_FD76747E: 0.31
+    - Vector1_FD76747E: 0.21
     m_Colors:
     - Color_7D47CAEE: {r: 0, g: 0.27033716, b: 0.5377358, a: 0}
     - Color_C1E4774B: {r: 0, g: 0.84705883, b: 1, a: 0}

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PendulumScript : MonoBehaviour
+public class RopeActivator : MonoBehaviour
 {
+    public RopeTest ropeTest;
+
     public BoxCollider interactArea;
-    public Rigidbody objectToActivate;
+    public GameObject objectToActivate;
 
     private GameObject player;
     private UIManager uiManager;
@@ -15,7 +17,6 @@ public class PendulumScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectToActivate.isKinematic = true;
         player = GameObject.FindGameObjectWithTag("Player");
         uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
@@ -25,10 +26,9 @@ public class PendulumScript : MonoBehaviour
     {
         if (interactable && Input.GetKeyDown(KeyCode.E) && player.GetComponent<SpringJoint>() == null)
         {
-            objectToActivate.isKinematic = false;
             SpringJoint spring = player.AddComponent<SpringJoint>();
             spring.spring = 1500f;
-            spring.connectedBody = objectToActivate;
+            //spring.connectedBody = objectToActivate;
         }
         if (Input.GetKeyDown(KeyCode.Q) && player.GetComponent<SpringJoint>() != null)
         {
@@ -41,6 +41,7 @@ public class PendulumScript : MonoBehaviour
         {
             uiManager.SetInteractPrompt(true);
             interactable = true;
+            ropeTest = other.gameObject.GetComponent<RopeTest>();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -49,6 +50,7 @@ public class PendulumScript : MonoBehaviour
         {
             uiManager.SetInteractPrompt(false);
             interactable = false;
+            ropeTest = null;
         }
     }
 }

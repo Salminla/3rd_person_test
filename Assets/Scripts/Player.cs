@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // References
     Rigidbody rb;
     GameObject playerModel;
     CapsuleCollider playerCollider;
@@ -14,19 +15,23 @@ public class Player : MonoBehaviour
     GameObject pointerObject;
     [SerializeField]
     Material playerMaterial;
+    HingeJoint playerHinge;
 
     Vector2 lookDirection;
     Vector3 inputs;
 
+    // Movement
     [SerializeField]
-    private float horizontalSpeed = 6;
+    private float horizontalSpeed = 10f;
     [SerializeField]
-    private float verticalSpeed = 6;
+    private float verticalSpeed = 10f;
     [SerializeField]
-    private float airSpeed = 7000;
+    private float airSpeed = 1000f;
     private float airSpeedO;
     [SerializeField]
-    private float jumpForce = 900f;
+    private float ropeSpeed = 20f;
+    [SerializeField]
+    private float jumpForce = 1100f;
 
     [SerializeField]
     private float groundDistance = 5;
@@ -38,18 +43,31 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool delayFinished = true;
     private bool delayOngoing = false;
+    [SerializeField]
+    private bool onRope = false;
 
-    //MovementSmoothingTestVars
+    //Movement vars
+    float sumOfVelocityXZ;
+    float sumOfVelocityXYZ;
+
+    Vector3 GroundMovement;
+    Vector3 AirMovement;
+    Vector3 RopeMovement;
+
+    Vector3 playerRotation;
+
+    // MovementSmoothingVars
     public float iAcceleration = 1f;
     public float iDeceleration = 2f;
     public float xSmoothed = 0;
     public float ySmoothed = 0;
 
+    // UI
+    UIManager uiManager;
+
     public UnityEngine.UI.Text debugText1;
     public UnityEngine.UI.Text debugText2;
 
-    // Swing testing
-    public HingeJoint playerHingePoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,13 +75,14 @@ public class Player : MonoBehaviour
         playerModel = GameObject.Find("Thing");
         playerCollider = GetComponent<CapsuleCollider>();
         mainCamera = Camera.main;
+        uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        //playerHinge = GetComponent<HingeJoint>();
 
         playerCollider.contactOffset = 0.02f;
 
         airSpeedO = airSpeed;
 
-        // Swing testing
-
+        rb.drag = 0.1f;
     }
     //All the Input capturing done in Update
     void Update()
@@ -74,9 +93,8 @@ public class Player : MonoBehaviour
             isGrounded = true;
         else
             isGrounded = false;
-
-        PointerFunction();
     }
+
     // All the rigidbody interactions done in FixedUpdate
     void FixedUpdate()
     {
@@ -95,13 +113,44 @@ public class Player : MonoBehaviour
         
         inputs = Vector3.ClampMagnitude(inputs, 1f);
 
+        // Jumping
         if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
             StartCoroutine(JumpBuffer());
         }
+
+        // Movement calculations in Update
+        sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
+        sumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
+
+        GroundMovement = (transform.forward * horizontalSpeed * inputs.x * Time.deltaTime) + (transform.right * horizontalSpeed * -inputs.y * Time.deltaTime) + new Vector3(0, rb.velocity.y);
+        AirMovement = (transform.forward * airSpeed * inputs.x * 100 * Time.deltaTime) + (transform.right * airSpeed * -inputs.y * 100 * Time.deltaTime);
+        RopeMovement = (transform.forward * ropeSpeed * inputs.x * Time.deltaTime) + (transform.right * ropeSpeed * -inputs.y * Time.deltaTime);
+
+        playerRotation = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
+
+        #region DEBUG STUFF
+        //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
+        //Debug.Log(GroundMovement);
+        uiManager.SetDebugUI(1, "Vel: " + sumOfVelocityXZ.ToString("F2") + " AirDir: " + AirMovement.normalized + " VelDir:" + rb.velocity.normalized
+                    + "\nDrag: " + rb.drag.ToString("F2") + " ASpeed: " + airSpeed);
+        Debug.DrawRay(transform.position, AirMovement.normalized, Color.yellow);
+        Debug.DrawRay(transform.position, rb.velocity.normalized, Color.red);
+
+        //IsGrounded function debugging
+        if (isGrounded)
+        {
+            playerMaterial.color = Color.green;
+        }
+        else
+        {
+            playerMaterial.color = Color.red;
+        }
+        //Debug.Log(colliding);
+        #endregion
     }
-    // Makes the specified input move smoothly from 0 to 1 and vice-versa.
+    // Makes the specified input move smoothly from 0 to 1 and vice-versa. A bit buggy still, esp. controllers...
     private float InputSmoothing(string axis, ref float smoothed)
     {
         float accelerating = Input.GetAxisRaw(axis);
@@ -119,34 +168,34 @@ public class Player : MonoBehaviour
     /// </summary>
     void PlayerMovement()
     {
+        // Movement vector, when player is on the ground
 
-        float sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
-        float sumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
-
-        // Movement, when player is on the ground
-        Vector3 GroundMovement = (transform.forward * horizontalSpeed * inputs.x * Time.deltaTime) + (transform.right * horizontalSpeed * -inputs.y * Time.deltaTime) + new Vector3(0, rb.velocity.y);
         //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * 50, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * 50);
 
-        // Movement when the player is in the air
-        Vector3 AirMovement = (transform.forward * airSpeed * inputs.x * 100 * Time.deltaTime) + (transform.right * airSpeed * -inputs.y * 100 * Time.deltaTime);
+        // Movement vector when the player is in the air
+
+        //Vector3 AirMovementDir = rb.velocity.normalized;
+        //Vector3 AirMovement = new Vector3(AirMovementDir.x + 10 * inputs.x * Time.deltaTime, AirMovementDir.z + 10 * -inputs.y * Time.deltaTime);
         //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * airSpeed, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * airSpeed);
 
+
         // Rotation
-        Vector3 playerRotation = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
+        
         rb.transform.eulerAngles = playerRotation;
-        //Quaternion rotation = new Quaternion(playerCamera.transform.rotation.x, playerCamera.transform.rotation.y, playerCamera.transform.rotation.z, 1);
-        //rb.MoveRotation(rotation);
-        //Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
-        //rb.MoveRotation(rb.rotation * deltaRotation);
 
         //rb.drag = sumOfVelocityXZ / 15;
-        rb.drag = 0.2f;
 
-        if (sumOfVelocityXZ > 8)
-            airSpeed = airSpeedO - (sumOfVelocityXZ * 100) / 1.5f;
+        if (!onRope)
+        {
+            if (sumOfVelocityXZ > 8)
+                airSpeed = airSpeedO - (sumOfVelocityXZ * 100) / 1.5f;
+            else
+                airSpeed = airSpeedO;
+        }
         else
-            airSpeed = airSpeedO;
-
+        {
+            airSpeed = ropeSpeed;
+        }
         // Adds slight delay after landing from a jump before switching to GroundMovement
         if (isGrounded && !delayOngoing && !delayFinished)
         {
@@ -156,11 +205,7 @@ public class Player : MonoBehaviour
         if (isGrounded && delayFinished)
         {
             if (GroundMovement.x != 0 || GroundMovement.z != 0)
-            {
                 rb.velocity = GroundMovement;
-            }
-            
-            //rb.AddForce(GroundMovement * 1000);
         }
         else if (!isGrounded)
         {
@@ -175,43 +220,24 @@ public class Player : MonoBehaviour
             rb.AddForce(new Vector3(0, rb.mass * 5), ForceMode.Impulse);
             isJumping = false;
         }
-        // Nudge if stuck (If stuck in place while the game thinks you are not grounded)
+        // Nudge if stuck (If stuck in place while the game thinks you are not grounded) Buggy, allows wall climbing in corners.
         if (!IsGrounded() && sumOfVelocityXYZ < 0.01f && isJumping)
             rb.AddForce(new Vector3(0, rb.mass * 1.5f), ForceMode.Impulse);
 
-        #region DEBUG STUFF
-        //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
-        //Debug.Log(GroundMovement);
-        DebugUI("MoveVect: "+GroundMovement.ToString(), 1);
-        Debug.Log("Vel: " + sumOfVelocityXZ.ToString("F2") + "AirDir: " + AirMovement.normalized + "VelDir:" + rb.velocity.normalized
-                    + "Drag: " + rb.drag.ToString("F2") + "ASpeed: " + airSpeed);
-        Debug.DrawRay(transform.position, AirMovement.normalized, Color.yellow);
-        Debug.DrawRay(transform.position, rb.velocity.normalized, Color.red);
-
-        //IsGrounded function debugging
-        if (isGrounded)
-        {
-            playerMaterial.color = Color.green;
-            //playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.green);
-            //Debug.Log("Am grounded");
-        }
-        else
-        {
-            playerMaterial.color = Color.red;
-            //playerModel.GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", Color.red);
-        }
-        //Debug.Log(colliding);
-        #endregion
+        
     }
     //Grounding check done with CheckCapsule
     bool IsGrounded()
     {
-        // Bit shift the index of the layer(9) to get a bit mask
-        int layerMask = 1 << 8;
+        // Bit shift the index of the layer(8) to get a bit mask
+        // 0000 0001 -> 1000 0000
+        int layerMask  = 1 << 8;
+        int layerMask2 = 1 << 2;
+        int finalmask = layerMask | layerMask2;
 
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        layerMask = ~layerMask;
+        finalmask = ~finalmask;
 
         // get the radius of the players capsule collider, and make it a tiny bit smaller than that
         float radius = playerCollider.radius * 0.75f;
@@ -220,13 +246,13 @@ public class Player : MonoBehaviour
 
         // returns true if the capsule touches something on that layer
         bool isGroundedL = Physics.CheckCapsule(new Vector3(transform.position.x - gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), 
-                                                new Vector3(transform.position.x + gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), radius, layerMask);
+                                                new Vector3(transform.position.x + gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), radius, finalmask);
         // Grounding check for 
         bool isGroundedY = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z),
-                                                new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), radiusY, layerMask);
+                                                new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), radiusY, finalmask);
         // Grounding check for 
         bool isGroundedA = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.18f, transform.position.z),
-                                                new Vector3(transform.position.x, transform.position.y - 0.18f, transform.position.z), radiusA, layerMask);
+                                                new Vector3(transform.position.x, transform.position.y - 0.18f, transform.position.z), radiusA, finalmask);
         if (isGroundedY)
             return true;
         else
@@ -244,51 +270,6 @@ public class Player : MonoBehaviour
         //bool isGroundedBack = Physics.CheckSphere(pos, radius, layerMask);
         //Physics.Che
         #endregion
-    }
-    // Function for the player's pointer in the world
-    void PointerFunction()
-    {
-        // Bit shift the index of the layer(8) and layer(2) to get a bit mask
-        int layerMask1 = 1 << 8;
-        int layerMask2 = 1 << 2;
-        int finalMask = layerMask1 | layerMask2;
-
-        // This would cast rays only against colliders in layer 8.
-        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        finalMask = ~finalMask;
-
-        RaycastHit hit;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, 100, finalMask))
-        {
-            if (!pointerObject.activeSelf)
-            {
-                Debug.Log("Pointer on");
-                pointerObject.SetActive(true);
-            }
-            //Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            pointerObject.transform.position = Vector3.Lerp(pointerObject.transform.position, hit.point, Time.deltaTime * 30);
-        }
-        else
-        {
-            if (pointerObject.activeSelf)
-            {
-                Debug.Log("Pointer off");
-                pointerObject.SetActive(false);
-            }      
-        }
-    }
-    private void DebugUI(string text, int boxNum)
-    {
-        if (boxNum == 1)
-        {
-            debugText1.text = text;
-        }
-        else
-        {
-            Debug.LogError("Incocrrect assignment");
-        }
     }
     // Slight delay before being able to move againg after landing
     IEnumerator MovementDelay()

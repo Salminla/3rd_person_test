@@ -10,5 +10,6 @@ public class Teleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.gameObject.transform.position = endPoint.position + endPoint.right / 1.5f;
+        other.gameObject.transform.rotation = endPoint.rotation;
     }
 }
