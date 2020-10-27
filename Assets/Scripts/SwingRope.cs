@@ -44,7 +44,8 @@ public class SwingRope : MonoBehaviour
                 //hit.normal
             }
             //Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            pointerObject.transform.position = Vector3.Lerp(pointerObject.transform.position, hit.point + (hit.normal / 16), Time.deltaTime * 80);
+            // pointerObject.transform.position = Vector3.Lerp(pointerObject.transform.position, hit.point + (hit.normal / 16), Time.deltaTime * 80);
+            pointerObject.transform.position = hit.point + (hit.normal / 16);
         }
         else
         {
@@ -66,7 +67,7 @@ public class SwingRope : MonoBehaviour
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 100, finalMask) && Input.GetMouseButtonDown(0))
+        if (Physics.Raycast(ray, out hit, 100, finalMask) && Input.GetButtonDown("Fire1"))
         {
             Debug.Log(hit.transform.gameObject.name);
             ropePoint = hit.point;
@@ -84,7 +85,7 @@ public class SwingRope : MonoBehaviour
 
             
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetButtonUp("Fire1"))
         {
             Destroy(player.GetComponent<SpringJoint>());
         }

@@ -2,79 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HingeJoint))]
+[RequireComponent(typeof(CapsuleCollider))]
 public class Player : MonoBehaviour
 {
     // References
-    Rigidbody rb;
-    GameObject playerModel;
-    CapsuleCollider playerCollider;
-    Camera mainCamera;
-    [SerializeField]
-    GameObject playerCamera;
-    [SerializeField]
-    GameObject pointerObject;
-    [SerializeField]
-    Material playerMaterial;
-    HingeJoint playerHinge;
+    private Rigidbody rb;
+    private CapsuleCollider playerCollider;
+    [SerializeField] private GameObject playerCamera;
+    [SerializeField] private Material playerMaterial;
+    private HingeJoint playerHinge;
 
-    Vector2 lookDirection;
-    Vector3 inputs;
+    private Vector2 lookDirection;
+    private Vector3 inputs;
 
     // Movement
     [SerializeField]
-    private float horizontalSpeed = 10f;
-    [SerializeField]
-    private float verticalSpeed = 10f;
+    private float groundSpeed = 100f;
     [SerializeField]
     private float airSpeed = 1000f;
     private float airSpeedO;
     [SerializeField]
     private float ropeSpeed = 20f;
     [SerializeField]
-    private float jumpForce = 1100f;
+    private float jumpForce = 5f;
 
-    [SerializeField]
-    private float groundDistance = 5;
-    private float gCapsuleExtremesX = 0.4f;
-    private float gCapsulePosY = 0.15f;
-
-    private bool isJumping = false;
-    private bool colliding = false;
+    private bool isJumping;
     private bool isGrounded;
     private bool delayFinished = true;
-    private bool delayOngoing = false;
+    private bool delayOngoing;
     [SerializeField]
-    private bool onRope = false;
+    private bool onRope;
 
     //Movement vars
-    float sumOfVelocityXZ;
-    float sumOfVelocityXYZ;
+    private float sumOfVelocityXZ;
+    private float sumOfVelocityXYZ;
 
-    Vector3 GroundMovement;
-    Vector3 AirMovement;
-    Vector3 RopeMovement;
+    private Vector3 GroundMovement;
+    private Vector3 AirMovement;
+    private Vector3 RopeMovement;
 
-    Vector3 playerRotation;
+    private Vector3 playerRotation;
 
     // MovementSmoothingVars
     public float iAcceleration = 1f;
     public float iDeceleration = 2f;
-    public float xSmoothed = 0;
-    public float ySmoothed = 0;
+    public float xSmoothed;
+    public float ySmoothed;
 
     // UI
-    UIManager uiManager;
+    private UIManager uiManager;
 
     public UnityEngine.UI.Text debugText1;
     public UnityEngine.UI.Text debugText2;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerModel = GameObject.Find("Thing");
         playerCollider = GetComponent<CapsuleCollider>();
-        mainCamera = Camera.main;
         uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
         //playerHinge = GetComponent<HingeJoint>();
 
@@ -82,36 +68,43 @@ public class Player : MonoBehaviour
 
         airSpeedO = airSpeed;
 
-        rb.drag = 0.1f;
+        rb.drag = 0.05f;
     }
     //All the Input capturing done in Update
-    void Update()
+    private void Update()
     {
         InputHandler();
 
-        if (IsGrounded())
-            isGrounded = true;
-        else
-            isGrounded = false;
+        isGrounded = IsGrounded();
     }
 
     // All the rigidbody interactions done in FixedUpdate
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         PlayerMovement();       
     }
     /// <summary>
     /// Function that handles all of the player's inputs
     /// </summary>
-    void InputHandler()
+    private void InputHandler()
     {
         // Player movement axis
         inputs = Vector3.zero;
 
         inputs.x = InputSmoothing("Horizontal", ref xSmoothed);
-        inputs.y = InputSmoothing("Vertical", ref ySmoothed);
+        inputs.z = InputSmoothing("Vertical", ref ySmoothed);
         
         inputs = Vector3.ClampMagnitude(inputs, 1f);
+
+        // Movement calculations in Update
+        sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
+        sumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
+        
+        // GroundMovement = (transform.forward * horizontalSpeed * inputs.x ) + (transform.right * horizontalSpeed * -inputs.z) + new Vector3(0, rb.velocity.y);
+        AirMovement = (transform.forward * (airSpeed * inputs.x * 100)) + (transform.right * (airSpeed * -inputs.z * 100));
+        RopeMovement = (transform.forward * (ropeSpeed * inputs.x)) + (transform.right * (ropeSpeed * -inputs.z));
+
+        playerRotation = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
 
         // Jumping
         if (Input.GetButtonDown("Jump"))
@@ -119,16 +112,6 @@ public class Player : MonoBehaviour
             isJumping = true;
             StartCoroutine(JumpBuffer());
         }
-
-        // Movement calculations in Update
-        sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
-        sumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
-
-        GroundMovement = (transform.forward * horizontalSpeed * inputs.x * Time.deltaTime) + (transform.right * horizontalSpeed * -inputs.y * Time.deltaTime) + new Vector3(0, rb.velocity.y);
-        AirMovement = (transform.forward * airSpeed * inputs.x * 100 * Time.deltaTime) + (transform.right * airSpeed * -inputs.y * 100 * Time.deltaTime);
-        RopeMovement = (transform.forward * ropeSpeed * inputs.x * Time.deltaTime) + (transform.right * ropeSpeed * -inputs.y * Time.deltaTime);
-
-        playerRotation = new Vector3(transform.eulerAngles.x, playerCamera.transform.eulerAngles.y, transform.eulerAngles.z);
 
         #region DEBUG STUFF
         //Debug.Log(Quaternion.LookRotation(transform.forward, Vector3.up).eulerAngles);
@@ -140,50 +123,36 @@ public class Player : MonoBehaviour
 
         //IsGrounded function debugging
         if (isGrounded)
-        {
             playerMaterial.color = Color.green;
-        }
         else
-        {
             playerMaterial.color = Color.red;
-        }
         //Debug.Log(colliding);
         #endregion
     }
     // Makes the specified input move smoothly from 0 to 1 and vice-versa. A bit buggy still, esp. controllers...
     private float InputSmoothing(string axis, ref float smoothed)
     {
-        float accelerating = Input.GetAxisRaw(axis);
+        var accelerating = Input.GetAxisRaw(axis);
 
         if (accelerating > 0)
             smoothed = Mathf.Clamp(smoothed + iAcceleration * Time.deltaTime, -1f, accelerating);
         else if (accelerating < 0)
             smoothed = Mathf.Clamp(smoothed - iAcceleration * Time.deltaTime, accelerating, 1f);
         else
-                smoothed = Mathf.Clamp01(Mathf.Abs(smoothed) - iDeceleration * Time.deltaTime) * Mathf.Sign(smoothed);
+            smoothed = Mathf.Clamp01(Mathf.Abs(smoothed) - iDeceleration * Time.deltaTime) * Mathf.Sign(smoothed);
         return smoothed;
     }
     /// <summary>
     /// Function that handles all of the player's movement, using rigidbody
     /// </summary>
-    void PlayerMovement()
+    private void PlayerMovement()
     {
-        // Movement vector, when player is on the ground
-
-        //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * 50, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * 50);
-
-        // Movement vector when the player is in the air
-
-        //Vector3 AirMovementDir = rb.velocity.normalized;
-        //Vector3 AirMovement = new Vector3(AirMovementDir.x + 10 * inputs.x * Time.deltaTime, AirMovementDir.z + 10 * -inputs.y * Time.deltaTime);
-        //new Vector3(verticalAxis * -verticalSpeed * Time.deltaTime * airSpeed, rb.velocity.y, horizontalAxis * horizontalSpeed * Time.deltaTime * airSpeed);
-
-
-        // Rotation
-        
+        // Rotation   
         rb.transform.eulerAngles = playerRotation;
 
-        //rb.drag = sumOfVelocityXZ / 15;
+        GroundMovement = (transform.forward * (groundSpeed * inputs.x * Time.deltaTime)) +
+                         (transform.right * (groundSpeed * -inputs.z * Time.deltaTime)) + new Vector3(0, rb.velocity.y);
+        // rb.drag = sumOfVelocityXZ / 800;
 
         if (!onRope)
         {
@@ -211,13 +180,13 @@ public class Player : MonoBehaviour
         {
             delayFinished = false;
             delayOngoing = false;
-            rb.AddForce(AirMovement);
+            rb.AddForce(AirMovement * Time.deltaTime);
         }
 
         // Jumping
         if (isJumping && isGrounded)
         {
-            rb.AddForce(new Vector3(0, rb.mass * 5), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, rb.mass * jumpForce) * Time.deltaTime, ForceMode.Impulse);
             isJumping = false;
         }
         // Nudge if stuck (If stuck in place while the game thinks you are not grounded) Buggy, allows wall climbing in corners.
@@ -227,7 +196,7 @@ public class Player : MonoBehaviour
         
     }
     //Grounding check done with CheckCapsule
-    bool IsGrounded()
+    private bool IsGrounded()
     {
         // Bit shift the index of the layer(8) to get a bit mask
         // 0000 0001 -> 1000 0000
@@ -240,23 +209,15 @@ public class Player : MonoBehaviour
         finalmask = ~finalmask;
 
         // get the radius of the players capsule collider, and make it a tiny bit smaller than that
-        float radius = playerCollider.radius * 0.75f;
-        float radiusY = playerCollider.radius * 0.60f;
-        float radiusA = playerCollider.radius * 0.80f;
+        var groundColliderRad = playerCollider.radius;
+        float radiusY = groundColliderRad * 0.60f;
 
         // returns true if the capsule touches something on that layer
-        bool isGroundedL = Physics.CheckCapsule(new Vector3(transform.position.x - gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), 
-                                                new Vector3(transform.position.x + gCapsuleExtremesX, transform.position.y - gCapsulePosY, transform.position.z), radius, finalmask);
         // Grounding check for 
         bool isGroundedY = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.30f, transform.position.z),
                                                 new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), radiusY, finalmask);
         // Grounding check for 
-        bool isGroundedA = Physics.CheckCapsule(new Vector3(transform.position.x, transform.position.y + 0.18f, transform.position.z),
-                                                new Vector3(transform.position.x, transform.position.y - 0.18f, transform.position.z), radiusA, finalmask);
-        if (isGroundedY)
-            return true;
-        else
-            return false;
+        return isGroundedY;
 
         #region OLD GROUNDING STUFF
         //get the position (assuming its right at the bottom) and move it up by almost the whole radius
@@ -272,20 +233,20 @@ public class Player : MonoBehaviour
         #endregion
     }
     // Slight delay before being able to move againg after landing
-    IEnumerator MovementDelay()
+    private IEnumerator MovementDelay()
     {
         delayFinished = false;
         yield return new WaitForSeconds(.1f);
         delayFinished = true;
     }
     // Stops player from jumping after landing when pressing the jump button while in the air
-    IEnumerator JumpBuffer()
+    private IEnumerator JumpBuffer()
     {
         yield return new WaitForSeconds(.1f);
         isJumping = false;
     }
     //DEBUG
-    IEnumerator DebugUpdate()
+    private IEnumerator DebugUpdate()
     {
         yield return 0;
     }

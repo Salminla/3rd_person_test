@@ -68166,6 +68166,16 @@ PrefabInstance:
       propertyPath: debugText1
       value: 
       objectReference: {fileID: 1330886864}
+    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
+        type: 3}
+      propertyPath: airSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
+        type: 3}
+      propertyPath: ropeSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2021087978049646643, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: m_LocalPosition.x
