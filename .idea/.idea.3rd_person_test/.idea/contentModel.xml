@@ -7,33 +7,35 @@
       <e p="3rd_person_test.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Scripts" t="Include">
-          <e p="CameraCollision.cs" t="Include" />
-          <e p="CameraFollow.cs" t="Include" />
-          <e p="etc" t="Include">
-            <e p="AttachPlayer.cs" t="Include" />
-            <e p="BoxMove.cs" t="Include" />
-            <e p="BoxMoveRB.cs" t="Include" />
-            <e p="Gate.cs" t="Include" />
-            <e p="Launcher.cs" t="Include" />
-            <e p="SpawnScript.cs" t="Include" />
-            <e p="Teleport.cs" t="Include" />
+        <e p="_project" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CameraCollision.cs" t="Include" />
+            <e p="CameraFollow.cs" t="Include" />
+            <e p="etc" t="Include">
+              <e p="AttachPlayer.cs" t="Include" />
+              <e p="BoxMove.cs" t="Include" />
+              <e p="BoxMoveRB.cs" t="Include" />
+              <e p="Gate.cs" t="Include" />
+              <e p="Launcher.cs" t="Include" />
+              <e p="SpawnScript.cs" t="Include" />
+              <e p="Teleport.cs" t="Include" />
+            </e>
+            <e p="GameManager.cs" t="Include" />
+            <e p="old" t="Include">
+              <e p="PlayerCC.cs" t="Include" />
+            </e>
+            <e p="Player.cs" t="Include" />
+            <e p="SwingRope.cs" t="Include" />
+            <e p="test" t="Include">
+              <e p="JSONTest.cs" t="Include" />
+              <e p="MovementExp.cs" t="Include" />
+              <e p="PendulumScript.cs" t="Include" />
+              <e p="Rope.cs" t="Include" />
+              <e p="RopeActivator.cs" t="Include" />
+              <e p="RopeTest.cs" t="Include" />
+            </e>
+            <e p="UIManager.cs" t="Include" />
           </e>
-          <e p="GameManager.cs" t="Include" />
-          <e p="old" t="Include">
-            <e p="PlayerCC.cs" t="Include" />
-          </e>
-          <e p="Player.cs" t="Include" />
-          <e p="SwingRope.cs" t="Include" />
-          <e p="test" t="Include">
-            <e p="JSONTest.cs" t="Include" />
-            <e p="MovementExp.cs" t="Include" />
-            <e p="PendulumScript.cs" t="Include" />
-            <e p="Rope.cs" t="Include" />
-            <e p="RopeActivator.cs" t="Include" />
-            <e p="RopeTest.cs" t="Include" />
-          </e>
-          <e p="UIManager.cs" t="Include" />
         </e>
         <e p="SkySerie Freebie" t="Include">
           <e p="Hdri setup.txt" t="Include" />
