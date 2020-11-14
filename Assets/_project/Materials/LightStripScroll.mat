@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LightStrip
+  m_Name: LightStripScroll
   m_Shader: {fileID: -6465566751694194690, guid: cd2186ed0fafd8c46af05f5720a8c4f8,
     type: 3}
   m_ShaderKeywords: 
@@ -28,6 +28,7 @@ Material:
         m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - Vector1_A8CC818C: 0.8
     m_Colors:
-    - Color_15A6B13B: {r: 5.1894135, g: 3.8920598, b: 13.76636, a: 0}
+    - Color_15A6B13B: {r: 25.910612, g: 19.166754, b: 67.79352, a: 0}

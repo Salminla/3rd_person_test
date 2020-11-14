@@ -422,14 +422,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  pointerObject: {fileID: 2021087977211857018}
   playerMaterial: {fileID: 2100000, guid: d84d8a24342db0f43afd4cd0dae7f445, type: 2}
-  horizontalSpeed: 400
-  verticalSpeed: 400
+  groundSpeed: 300
   airSpeed: 1000
-  ropeSpeed: 40
+  ropeSpeed: 30
   jumpForce: 350
-  groundDistance: 0
   onRope: 1
   iAcceleration: 2
   iDeceleration: 4
