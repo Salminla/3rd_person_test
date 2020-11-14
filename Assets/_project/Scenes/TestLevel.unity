@@ -44975,20 +44975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6514d60ec486f4c84769d91b573ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
-  pointerObject: {fileID: 0}
+  inputHandler: {fileID: 0}
+  movementHandler: {fileID: 0}
   playerMaterial: {fileID: 0}
-  horizontalSpeed: 6
-  verticalSpeed: 6
-  airSpeed: 7000
-  ropeSpeed: 7000
-  jumpForce: 900
-  groundDistance: 5
-  onRope: 0
-  iAcceleration: 1
-  iDeceleration: 2
-  xSmoothed: 0
-  ySmoothed: 0
   debugText1: {fileID: 0}
   debugText2: {fileID: 0}
 --- !u!4 &1285803776
@@ -68156,26 +68145,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
+    - target: {fileID: 141874128, guid: 454faf52b19ac9a44a2fb96e6851c564, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1897653889}
+    - target: {fileID: 141874128, guid: 454faf52b19ac9a44a2fb96e6851c564, type: 3}
+      propertyPath: groundSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: debugText1
       value: 
       objectReference: {fileID: 1330886864}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: airSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: ropeSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2021087978049646643, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: m_LocalPosition.x

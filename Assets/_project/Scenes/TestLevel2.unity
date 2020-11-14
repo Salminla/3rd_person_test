@@ -12936,21 +12936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
+    - target: {fileID: 141874128, guid: 454faf52b19ac9a44a2fb96e6851c564, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 695145365}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: ropeSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: groundSpeed
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 2021087978049646643, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: m_LocalPosition.x

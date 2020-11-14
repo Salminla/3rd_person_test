@@ -1,31 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
-namespace _project.Scripts
+namespace _project.Scripts.Player
 {
     public class InputHandler : MonoBehaviour
     {
         [SerializeField] private Transform playerTransform;
         [SerializeField] private GameObject playerCamera;
-        [SerializeField] private float airSpeed = 1000f;
-        
-        private Vector3 groundMovement;
-        private Vector3 airMovement;
-        private Vector3 playerRotation;
+        [SerializeField] private float airSpeed = 20f;
+        [SerializeField] private float groundSpeed = 12f;
+
+        public Vector3 groundMovement { get; private set; }
+        public Vector3 airMovement { get; private set; }
+        public Vector3 playerRotation { get; private set; }
         
         private Vector3 inputs;
         
-        private bool isJumping;
-        
-        public float iAcceleration = 1f;
-        public float iDeceleration = 2f;
+        [HideInInspector]
+        public bool isJumping;
+
+        public float iAcceleration = 2f;
+        public float iDeceleration = 4f;
         // MovementSmoothingVars
-        public float xSmoothed;
-        public float ySmoothed;
+        private float xSmoothed;
+        private float ySmoothed;
         
-        /// <summary>
-        /// Function that handles all of the player's inputs
-        /// </summary>
         public void PlayerInput()
         {
             // Player movement axis
@@ -35,10 +34,14 @@ namespace _project.Scripts
             inputs.z = InputSmoothing("Vertical", ref ySmoothed);
         
             inputs = Vector3.ClampMagnitude(inputs, 1f);
-
-            var forward = playerTransform.forward;
-            var right = playerTransform.right;
-            airMovement = (forward * (airSpeed * inputs.x * 100)) + (right * (airSpeed * -inputs.z * 100));
+        
+            var playerTransformForward = playerTransform.forward * (groundSpeed * inputs.x);
+            var playerTransformRight = playerTransform.right * (groundSpeed * -inputs.z);
+            groundMovement = playerTransformForward + playerTransformRight;
+        
+            var forward = playerTransform.forward * (airSpeed * inputs.x * 100);
+            var right = playerTransform.right * (airSpeed * -inputs.z * 100);
+            airMovement = forward + right;
         
             var eulerAngles = playerTransform.eulerAngles;
             playerRotation = new Vector3(eulerAngles.x, playerCamera.transform.eulerAngles.y, eulerAngles.z);

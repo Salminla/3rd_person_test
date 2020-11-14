@@ -19,13 +19,17 @@
               <e p="Launcher.cs" t="Include" />
               <e p="SpawnScript.cs" t="Include" />
               <e p="Teleport.cs" t="Include" />
+              <e p="TestLevelSelect.cs" t="Include" />
             </e>
             <e p="GameManager.cs" t="Include" />
-            <e p="InputHandler.cs" t="Include" />
             <e p="old" t="Include">
               <e p="PlayerCC.cs" t="Include" />
             </e>
-            <e p="Player.cs" t="Include" />
+            <e p="Player" t="Include">
+              <e p="InputHandler.cs" t="Include" />
+              <e p="MovementHandler.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+            </e>
             <e p="SwingRope.cs" t="Include" />
             <e p="test" t="Include">
               <e p="JSONTest.cs" t="Include" />

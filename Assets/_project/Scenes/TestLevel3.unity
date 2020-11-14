@@ -282,26 +282,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 125653100}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &141874122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2021087978049646654, guid: 454faf52b19ac9a44a2fb96e6851c564,
-    type: 3}
-  m_PrefabInstance: {fileID: 808494600}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &141874128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141874122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05aaeb5dca644dd4b6747da849c69d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iAcceleration: 1
-  iDeceleration: 2
 --- !u!43 &171001853
 Mesh:
   m_ObjectHideFlags: 0
@@ -918,30 +898,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 634080428, guid: 454faf52b19ac9a44a2fb96e6851c564, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
+    - target: {fileID: 141874128, guid: 454faf52b19ac9a44a2fb96e6851c564, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 695145365}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: onRope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: airSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021087978049646640, guid: 454faf52b19ac9a44a2fb96e6851c564,
-        type: 3}
-      propertyPath: inputHandler
-      value: 
-      objectReference: {fileID: 141874128}
     - target: {fileID: 2021087978049646643, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: m_LocalPosition.x
