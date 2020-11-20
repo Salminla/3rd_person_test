@@ -20,20 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08e4b58-a45e-4b48-9a2a-26cbca715751" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/IInteractable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/IInteractable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Materials/Player.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Gate.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Gate.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/InputHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/InputHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/Gate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Gate.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Gate.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +60,17 @@
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/MovementHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/Gate.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/IInteractable.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate1.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/BoostGate.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" />
       </list>
     </option>
   </component>
@@ -114,6 +128,8 @@
       <workItem from="1605027792049" duration="258000" />
       <workItem from="1605259815811" duration="5430000" />
       <workItem from="1605361535131" duration="18231000" />
+      <workItem from="1605603877233" duration="6975000" />
+      <workItem from="1605864511672" duration="10373000" />
     </task>
     <servers />
   </component>
@@ -132,6 +148,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -145,5 +162,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/2560.101.1920.1040@0.0.2560.1400" timestamp="1605383838281" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605652495037">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.101.1920.1040@0.0.2560.1400" timestamp="1605652495037" />
   </component>
 </project>

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SwingRope : MonoBehaviour
 {
-    public Camera mainCamera;
-    public GameObject pointerObject;
-    public GameObject player;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject pointerObject;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject ropeOriginPoint;
 
     LineRenderer line;
 
@@ -38,22 +39,13 @@ public class SwingRope : MonoBehaviour
         if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 100, finalMask))
         {
             if (!pointerObject.activeSelf)
-            {
-                Debug.Log("Pointer on");
                 pointerObject.SetActive(true);
-                //hit.normal
-            }
-            //Debug.DrawRay(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            // pointerObject.transform.position = Vector3.Lerp(pointerObject.transform.position, hit.point + (hit.normal / 16), Time.deltaTime * 80);
             pointerObject.transform.position = hit.point + (hit.normal / 16);
         }
         else
         {
             if (pointerObject.activeSelf)
-            {
-                Debug.Log("Pointer off");
                 pointerObject.SetActive(false);
-            }
         }
     }
     private void SpringRope()
@@ -83,7 +75,6 @@ public class SwingRope : MonoBehaviour
 
             spring.damper = 7f;
 
-            
         }
         if (Input.GetButtonUp("Fire1"))
         {
@@ -95,7 +86,7 @@ public class SwingRope : MonoBehaviour
         if (player.GetComponent<SpringJoint>() != null)
         {
             line.enabled = true;
-            line.SetPosition(0, player.transform.position);
+            line.SetPosition(0, ropeOriginPoint.transform.position);
             line.SetPosition(1, ropePoint);
         }
         else

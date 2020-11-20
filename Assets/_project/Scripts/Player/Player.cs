@@ -1,4 +1,6 @@
-﻿using _project.Scripts;
+﻿using System;
+using _project.Scripts;
+using _project.Scripts.etc;
 using _project.Scripts.Player;
 using UnityEngine;
 
@@ -18,8 +20,7 @@ public class Player : MonoBehaviour
     
     public UnityEngine.UI.Text debugText1;
     public UnityEngine.UI.Text debugText2;
-
-    // Start is called before the first frame update
+    
     private void Start()
     {
         uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
@@ -36,6 +37,13 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         movementHandler.PlayerMovement();       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var interactable = other.GetComponent<IInteractable>();
+        if (interactable == null) return;
+        interactable.Interact();
     }
 
     /*private void DebugUIUpdate()

@@ -21,14 +21,14 @@ namespace _project.Scripts.Player
 
         public float iAcceleration = 2f;
         public float iDeceleration = 4f;
-        // MovementSmoothingVars
+
         private float xSmoothed;
         private float ySmoothed;
         
         public void PlayerInput()
         {
             // Player movement axis
-            inputs = Vector3.zero;
+            //inputs = Vector3.zero;
 
             inputs.x = InputSmoothing("Horizontal", ref xSmoothed);
             inputs.z = InputSmoothing("Vertical", ref ySmoothed);

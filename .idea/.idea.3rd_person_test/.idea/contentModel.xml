@@ -13,10 +13,12 @@
             <e p="CameraFollow.cs" t="Include" />
             <e p="etc" t="Include">
               <e p="AttachPlayer.cs" t="Include" />
+              <e p="BoostGate.cs" t="Include" />
               <e p="BoxMove.cs" t="Include" />
               <e p="BoxMoveRB.cs" t="Include" />
-              <e p="Gate.cs" t="Include" />
+              <e p="IInteractable.cs" t="Include" />
               <e p="Launcher.cs" t="Include" />
+              <e p="PointGate.cs" t="Include" />
               <e p="SpawnScript.cs" t="Include" />
               <e p="Teleport.cs" t="Include" />
               <e p="TestLevelSelect.cs" t="Include" />
