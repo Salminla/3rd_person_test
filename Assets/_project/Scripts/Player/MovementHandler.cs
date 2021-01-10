@@ -12,6 +12,8 @@ public class MovementHandler : MonoBehaviour
     
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private bool velocityLineEnabled = true;
+    
     
     private LineRenderer line;
 
@@ -36,7 +38,7 @@ public class MovementHandler : MonoBehaviour
 
         playerCollider.contactOffset = 0.02f;
 
-        rb.drag = 0.05f;
+        rb.drag = 0.04f;
     }
 
     private void Update()
@@ -46,8 +48,11 @@ public class MovementHandler : MonoBehaviour
         // Movement calculations in Update
         sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
         SumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
-        
-        DrawVelocityLine();
+
+        if (velocityLineEnabled && SumOfVelocityXYZ > 8.5f)
+            DrawVelocityLine();
+        else
+            line.enabled = false;
     }
     
     public void PlayerMovement()
@@ -77,12 +82,12 @@ public class MovementHandler : MonoBehaviour
         // Jumping
         if (inputHandler.isJumping && isGrounded)
         {
-            rb.AddForce(new Vector3(0, (rb.mass * jumpForce * Time.deltaTime)-rb.velocity.y*2, 0) , ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, (rb.mass * jumpForce * Time.deltaTime)-rb.velocity.y*4, 0) , ForceMode.Impulse);
             inputHandler.isJumping = false;
         }
         // Nudge if stuck (If stuck in place while the game thinks you are not grounded) Buggy, allows wall climbing in corners.
         if (!IsGrounded() && SumOfVelocityXYZ < 0.01f && inputHandler.isJumping)
-            rb.AddForce(new Vector3(0, rb.mass * 1.5f) * Time.deltaTime, ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, rb.mass * 20f) * Time.deltaTime, ForceMode.Impulse);
     }
 
     private void DrawVelocityLine()
@@ -96,7 +101,6 @@ public class MovementHandler : MonoBehaviour
             time += 0.1f;
         }
     }
-
     Vector3 GetPosAtTime(float time)
     {
         return new Vector3(
@@ -104,6 +108,7 @@ public class MovementHandler : MonoBehaviour
             (float) (transform.position.y + rb.velocity.y * time + 0.5 * Physics.gravity.y * Mathf.Pow(time, 2)),
             transform.position.z + rb.velocity.z * time);
     }
+    
     //Grounding check done with CheckCapsule
     private bool IsGrounded()
     {

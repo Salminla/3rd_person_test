@@ -20,27 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08e4b58-a45e-4b48-9a2a-26cbca715751" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/IInteractable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/IInteractable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Gate.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Gate.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Gates/BoostGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Gates/BoostGate.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-1_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-1_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-2_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-3_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-3_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-4_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-4_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-5_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/Lightmap-5_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/Gate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Gate.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Gate.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/BoostGate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/BoostGate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Testing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +74,12 @@
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate1.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/PointGate.cs" />
-        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/BoostGate.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
+        <option value="$PROJECT_DIR$/Assets/_project/Shaders/Testing/RayMarch.compute" />
+        <option value="$PROJECT_DIR$/Assets/_project/Shaders/RayMarchTest/NormalVector.shader" />
+        <option value="$PROJECT_DIR$/Assets/_project/Shaders/RayMarchTest/RayMarchStandard.shader" />
+        <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/BoostGate.cs" />
         <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/MovementHandler.cs" />
       </list>
     </option>
@@ -130,6 +140,12 @@
       <workItem from="1605361535131" duration="18231000" />
       <workItem from="1605603877233" duration="6975000" />
       <workItem from="1605864511672" duration="10373000" />
+      <workItem from="1605967810378" duration="3497000" />
+      <workItem from="1606468230177" duration="2452000" />
+      <workItem from="1606653785686" duration="6140000" />
+      <workItem from="1606814761011" duration="630000" />
+      <workItem from="1610289905654" duration="581000" />
+      <workItem from="1610290755148" duration="3303000" />
     </task>
     <servers />
   </component>
@@ -154,6 +170,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="945" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605972995588">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="945" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.101.1920.1040@0.0.2560.1400" timestamp="1605972995588" />
+    <state x="960" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1610290277857">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="960" y="436" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/2560.247.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1610290277857" />
     <state x="872" y="432" key="Rider.ProjectTemplateDialog.Size" timestamp="1605291115751">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -162,9 +186,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/2560.101.1920.1040@0.0.2560.1400" timestamp="1605383838281" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605652495037">
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1606656056937">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/2560.101.1920.1040@0.0.2560.1400" timestamp="1605652495037" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.247.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1606656056937" />
   </component>
 </project>

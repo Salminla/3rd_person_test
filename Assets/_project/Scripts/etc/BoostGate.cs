@@ -1,16 +1,26 @@
-﻿using System;
-using _project.Scripts.etc;
+﻿using _project.Scripts.etc;
 using UnityEngine;
 
 public class BoostGate : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject direction;
-    
-    private void Boost(GameObject player)
+    [SerializeField] private float boostForce = 100;
+    [SerializeField] private bool destroyOnEnter = true;
+
+    private void Boost(GameObject obj)    
     {
-        Debug.Log("You got a boost!");
-        player.GetComponent<Rigidbody>().AddForce(player.transform.right * -100, ForceMode.Impulse);
-        Destroy(gameObject);
+        if (obj.GetComponent<Rigidbody>() != null)
+        {
+            Debug.Log("You got a boost!");
+            obj.GetComponent<Rigidbody>().AddForce(GetDirection() * -boostForce, ForceMode.Impulse);
+            if (destroyOnEnter)
+                Destroy(this.gameObject);
+        }
+    }
+
+    private Vector3 GetDirection()
+    {
+        return (transform.position - direction.transform.position).normalized;
     }
 
     public void Interact()

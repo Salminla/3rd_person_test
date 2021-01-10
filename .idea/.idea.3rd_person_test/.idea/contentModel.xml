@@ -43,6 +43,13 @@
             </e>
             <e p="UIManager.cs" t="Include" />
           </e>
+          <e p="Shaders" t="Include">
+            <e p="RayMarchTest" t="Include">
+              <e p="NormalVector.shader" t="Include" />
+              <e p="RayMarch.compute" t="Include" />
+              <e p="RayMarchStandard.shader" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="SkySerie Freebie" t="Include">
           <e p="Hdri setup.txt" t="Include" />

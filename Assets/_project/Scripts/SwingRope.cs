@@ -66,7 +66,7 @@ public class SwingRope : MonoBehaviour
             SpringJoint spring = player.AddComponent<SpringJoint>();
             spring.autoConfigureConnectedAnchor = false;
             spring.connectedAnchor = hit.point;
-            spring.spring = 200;
+            spring.spring = 300;
 
             float distanceFromPoint = Vector3.Distance(player.transform.position, hit.point);
 
