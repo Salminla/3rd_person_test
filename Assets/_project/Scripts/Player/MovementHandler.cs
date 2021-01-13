@@ -12,10 +12,8 @@ public class MovementHandler : MonoBehaviour
     
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private bool velocityLineEnabled = true;
     
-    
-    private LineRenderer line;
+
 
     private bool delayFinished = true;
     private bool delayOngoing;
@@ -25,16 +23,16 @@ public class MovementHandler : MonoBehaviour
     private float sumOfVelocityXZ;
     public float SumOfVelocityXYZ { get; private set; }
     public bool isGrounded { get; private set; }
-    
+
     [Range(0,5)]
     [SerializeField] private float t;
-    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerTransform = transform;
         playerCollider = GetComponent<CapsuleCollider>();
-        line = GetComponent<LineRenderer>();
+        
 
         playerCollider.contactOffset = 0.02f;
 
@@ -48,11 +46,6 @@ public class MovementHandler : MonoBehaviour
         // Movement calculations in Update
         sumOfVelocityXZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z);
         SumOfVelocityXYZ = Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) + Mathf.Abs(rb.velocity.y);
-
-        if (velocityLineEnabled && SumOfVelocityXYZ > 8.5f)
-            DrawVelocityLine();
-        else
-            line.enabled = false;
     }
     
     public void PlayerMovement()
@@ -90,25 +83,6 @@ public class MovementHandler : MonoBehaviour
             rb.AddForce(new Vector3(0, rb.mass * 20f) * Time.deltaTime, ForceMode.Impulse);
     }
 
-    private void DrawVelocityLine()
-    {
-        line.enabled = true;
-        float time = 0;
-        
-        for (int i = 0; i < line.positionCount; i++)
-        {
-            line.SetPosition(i, GetPosAtTime(time));
-            time += 0.1f;
-        }
-    }
-    Vector3 GetPosAtTime(float time)
-    {
-        return new Vector3(
-            transform.position.x + rb.velocity.x * time,
-            (float) (transform.position.y + rb.velocity.y * time + 0.5 * Physics.gravity.y * Mathf.Pow(time, 2)),
-            transform.position.z + rb.velocity.z * time);
-    }
-    
     //Grounding check done with CheckCapsule
     private bool IsGrounded()
     {

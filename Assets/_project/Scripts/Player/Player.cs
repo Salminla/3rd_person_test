@@ -1,6 +1,4 @@
-﻿using System;
-using _project.Scripts;
-using _project.Scripts.etc;
+﻿using _project.Scripts.etc;
 using _project.Scripts.Player;
 using UnityEngine;
 
@@ -17,26 +15,24 @@ public class Player : MonoBehaviour
 
     private Transform playerTransform;
     private CapsuleCollider playerCollider;
-    
-    public UnityEngine.UI.Text debugText1;
-    public UnityEngine.UI.Text debugText2;
-    
+
     private void Start()
     {
-        uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        // uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
     }
+
     //All the Input capturing done in Update
     private void Update()
     {
         inputHandler.PlayerInput();
-        
+
         //DebugUIUpdate();
     }
 
     // All the rigidbody interactions done in FixedUpdate
     private void FixedUpdate()
     {
-        movementHandler.PlayerMovement();       
+        movementHandler.PlayerMovement();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,20 +41,19 @@ public class Player : MonoBehaviour
         if (interactable == null) return;
         interactable.Interact();
     }
-
-    /*private void DebugUIUpdate()
+}
+/*
+    private void DebugUIUpdate()
     {
         uiManager.SetDebugUI(1, "Vel: " + sumOfVelocityXZ.ToString("F2") + " AirDir: " + inputHandler.airMovement.normalized +
                                 " VelDir:" + movementHandler.rb.velocity.normalized
                                 + "\nDrag: " + movementHandler.rb.drag.ToString("F2") + " ASpeed: " + 0);
         var position = playerTransform.position;
-        Debug.DrawRay(position, inputHandler.airMovement.normalized, Color.yellow);
-        Debug.DrawRay(position, movementHandler.rb.velocity.normalized, Color.red);
+        //Debug.DrawRay(position, inputHandler.airMovement.normalized, Color.yellow);
+        //Debug.DrawRay(position, movementHandler.rb.velocity.normalized, Color.red);
 
         //IsGrounded function debugging
-        if (movementHandler.isGrounded)
-            playerMaterial.color = Color.green;
-        else
-            playerMaterial.color = Color.red;
-    }*/
+        // playerMaterial.color = movementHandler.isGrounded ? Color.green : Color.red;
+    }
 }
+*/
