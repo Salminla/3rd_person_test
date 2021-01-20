@@ -42,7 +42,7 @@ public class PlayerVisuals : MonoBehaviour
     private void DrawVelocityLine()
     {
         velocityLine.enabled = true;
-        float time = 0.05f;
+        float time = 0.03f;
         
         for (int i = 0; i < velocityLine.positionCount; i++)
         {
@@ -64,7 +64,7 @@ public class PlayerVisuals : MonoBehaviour
     {
         float trailTime;
         if (movementHandler.SumOfVelocityXYZ > 15)
-            trailTime = movementHandler.SumOfVelocityXYZ / 15;
+            trailTime = movementHandler.SumOfVelocityXYZ / 35;
         else
             trailTime = Mathf.Lerp(playerTrail.time, 0, 0.01f);
 

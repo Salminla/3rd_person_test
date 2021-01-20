@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class SwingRope : MonoBehaviour
@@ -58,10 +58,10 @@ public class SwingRope : MonoBehaviour
 
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-
+        
+        // TODO Make the rope move with the object it hit/disconnect when it disapperars
         if (Physics.Raycast(ray, out hit, 100, finalMask) && Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(hit.transform.gameObject.name);
             ropePoint = hit.point;
             SpringJoint spring = player.AddComponent<SpringJoint>();
             spring.autoConfigureConnectedAnchor = false;
@@ -74,7 +74,6 @@ public class SwingRope : MonoBehaviour
             spring.minDistance = distanceFromPoint * 0.15f;
 
             spring.damper = 7f;
-
         }
         if (Input.GetButtonUp("Fire1"))
         {
@@ -87,9 +86,26 @@ public class SwingRope : MonoBehaviour
         {
             line.enabled = true;
             line.SetPosition(0, ropeOriginPoint.transform.position);
-            line.SetPosition(1, ropePoint);
+            StartCoroutine(LineDraw());
         }
         else
             line.enabled = false;
+    }
+
+    IEnumerator LineDraw()
+    {
+        float t = 0;
+        float time = 0.2f;
+        Vector3 orig = ropeOriginPoint.transform.position;
+        Vector3 orig2 = ropePoint;
+        line.SetPosition(1, orig);
+        Vector3 newpos;
+        for (; t < time; t += Time.deltaTime)
+        {
+            newpos = Vector3.Lerp(orig, orig2, t / time);
+            line.SetPosition(1, newpos);
+            yield return null;
+        }
+        line.SetPosition(1, orig2);
     }
 }

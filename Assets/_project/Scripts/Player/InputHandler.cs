@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace _project.Scripts.Player
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandler : MonoBehaviour, MyControls.IPlayerActions
     {
         [SerializeField] private Transform playerTransform;
         [SerializeField] private GameObject playerCamera;
         [SerializeField] private float airSpeed = 20f;
         [SerializeField] private float groundSpeed = 12f;
+
+        private MyControls controls;
 
         public Vector3 groundMovement { get; private set; }
         public Vector3 airMovement { get; private set; }
@@ -70,6 +73,21 @@ namespace _project.Scripts.Player
         {
             yield return new WaitForSeconds(.1f);
             isJumping = false;
+        }
+
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            
+        }
+
+        public void OnLook(InputAction.CallbackContext context)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void OnFire(InputAction.CallbackContext context)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
