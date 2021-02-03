@@ -71,6 +71,7 @@ public class PlayerVisuals : MonoBehaviour
         float trailTimeClamped = Mathf.Clamp(trailTime, 0, 3);
 
         playerTrail.time = trailTimeClamped;
+        
     }
     
     private Vector3 GetPosAtTime(float time)

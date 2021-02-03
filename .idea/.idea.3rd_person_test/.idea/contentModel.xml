@@ -13,6 +13,7 @@
           <e p="Scripts" t="Include">
             <e p="CameraCollision.cs" t="Include" />
             <e p="CameraFollow.cs" t="Include" />
+            <e p="CubeGenerator.cs" t="Include" />
             <e p="etc" t="Include">
               <e p="AttachPlayer.cs" t="Include" />
               <e p="BoostGate.cs" t="Include" />
@@ -26,9 +27,6 @@
               <e p="TestLevelSelect.cs" t="Include" />
             </e>
             <e p="GameManager.cs" t="Include" />
-            <e p="old" t="Include">
-              <e p="PlayerCC.cs" t="Include" />
-            </e>
             <e p="Player" t="Include">
               <e p="InputHandler.cs" t="Include" />
               <e p="MovementHandler.cs" t="Include" />

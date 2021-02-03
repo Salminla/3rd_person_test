@@ -12,10 +12,14 @@ public class SwingRope : MonoBehaviour
     LineRenderer line;
 
     Vector3 ropePoint;
+    
+    float lineWidthOrig;
 
     private void Start()
     {
         line = GetComponent<LineRenderer>();
+        
+        lineWidthOrig = line.endWidth;
     }
     private void Update()
     {
@@ -60,10 +64,11 @@ public class SwingRope : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         
         // TODO Make the rope move with the object it hit/disconnect when it disapperars
-        if (Physics.Raycast(ray, out hit, 100, finalMask) && Input.GetButtonDown("Fire1"))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, 100, finalMask) && Input.GetButtonDown("Fire1"))
         {
             ropePoint = hit.point;
             SpringJoint spring = player.AddComponent<SpringJoint>();
+            spring.anchor = ropeOriginPoint.transform.localPosition;
             spring.autoConfigureConnectedAnchor = false;
             spring.connectedAnchor = hit.point;
             spring.spring = 300;
@@ -77,6 +82,7 @@ public class SwingRope : MonoBehaviour
         }
         if (Input.GetButtonUp("Fire1"))
         {
+            StartCoroutine(LineFade());
             Destroy(player.GetComponent<SpringJoint>());
         }
     }
@@ -84,28 +90,40 @@ public class SwingRope : MonoBehaviour
     {
         if (player.GetComponent<SpringJoint>() != null)
         {
+            StopCoroutine(LineFade());
             line.enabled = true;
             line.SetPosition(0, ropeOriginPoint.transform.position);
             StartCoroutine(LineDraw());
         }
-        else
-            line.enabled = false;
     }
 
     IEnumerator LineDraw()
     {
-        float t = 0;
+        line.startWidth = lineWidthOrig;
+        line.endWidth = lineWidthOrig;
+        
         float time = 0.2f;
         Vector3 orig = ropeOriginPoint.transform.position;
         Vector3 orig2 = ropePoint;
         line.SetPosition(1, orig);
-        Vector3 newpos;
-        for (; t < time; t += Time.deltaTime)
+        for (float t = 0; t < time; t += Time.deltaTime)
         {
-            newpos = Vector3.Lerp(orig, orig2, t / time);
+            var newpos = Vector3.Lerp(orig, orig2, t / time);
             line.SetPosition(1, newpos);
             yield return null;
         }
         line.SetPosition(1, orig2);
+    }
+
+    IEnumerator LineFade()
+    {
+        float time = 0.5f;
+        for (float t = 0; t < time; t += Time.deltaTime)
+        {
+            line.endWidth = Mathf.Lerp(lineWidthOrig, 0, t/time);
+            line.startWidth = Mathf.Lerp(lineWidthOrig, 0, t/time);
+            yield return null;
+        }
+        line.enabled = false;
     }
 }
