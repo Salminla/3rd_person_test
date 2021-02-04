@@ -23,31 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Cube.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Cube.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Player.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Player.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Pointer.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Pointer.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Rope.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Rope.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/VelocityCurve1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/VelocityCurve1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/old.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/old/PlayerCC.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/old/PlayerCC.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +46,13 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Shaders/Compute/ComputeShaderTest.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/test/Rope.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jINKsI3zO8Mg9xjkgUeyt8Gr3z" />
@@ -142,6 +127,8 @@
       <workItem from="1611492471430" duration="3366000" />
       <workItem from="1611570495765" duration="7737000" />
       <workItem from="1611843548735" duration="2655000" />
+      <workItem from="1612353568533" duration="6347000" />
+      <workItem from="1612445936193" duration="2672000" />
     </task>
     <servers />
   </component>

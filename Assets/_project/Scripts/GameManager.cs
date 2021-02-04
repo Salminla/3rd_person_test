@@ -1,17 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int Score { get; private set; }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -24,5 +17,10 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             SceneManager.LoadScene(0);
         }
+    }
+
+    public void IncreaseScore()
+    {
+        Score++;
     }
 }

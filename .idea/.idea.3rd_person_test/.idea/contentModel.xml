@@ -42,6 +42,7 @@
               <e p="RopeActivator.cs" t="Include" />
               <e p="RopeTest.cs" t="Include" />
             </e>
+            <e p="Timer.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
           <e p="Shaders" t="Include">

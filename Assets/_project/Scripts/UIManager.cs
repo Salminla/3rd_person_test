@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private Timer timer;
+
+    [SerializeField] private TMP_Text timerText;
+
     public Text debugText;
     public Text debugText2;
 
