@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435574365275",
+    "project_id": "swingropething",
+    "storage_bucket": "swingropething.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435574365275:android:15c9781a61cd051d7b737e",
+        "android_client_info": {
+          "package_name": "com.blaswas.swingrope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435574365275-qlc207mmtpb2jm30rqp01u130n9p9nio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5NajVwyYpIIMuj32xLGCkSIW9SqLWt5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435574365275-qlc207mmtpb2jm30rqp01u130n9p9nio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

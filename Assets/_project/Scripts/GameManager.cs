@@ -41,7 +41,11 @@ public class GameManager : MonoBehaviour
     {
         SetPlayerMovement(false);
         LevelEnd = true;
-        uiManager.SetEndScreen(true);
-        timer.StopTimer();
+        
+        if (uiManager != null)
+            uiManager.SetEndScreen(true);
+        
+        if (timer != null)
+            timer.StopTimer();
     }
 }

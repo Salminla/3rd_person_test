@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using DG.Tweening;
 using UnityEngine;
 
 public class SwingRope : MonoBehaviour
@@ -8,6 +7,8 @@ public class SwingRope : MonoBehaviour
     [SerializeField] private GameObject pointerObject;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ropeOriginPoint;
+
+    [SerializeField] private float ropeStiffness = 300;
 
     LineRenderer line;
 
@@ -71,7 +72,7 @@ public class SwingRope : MonoBehaviour
             spring.anchor = ropeOriginPoint.transform.localPosition;
             spring.autoConfigureConnectedAnchor = false;
             spring.connectedAnchor = hit.point;
-            spring.spring = 300;
+            spring.spring = ropeStiffness;
 
             float distanceFromPoint = Vector3.Distance(player.transform.position, hit.point);
 

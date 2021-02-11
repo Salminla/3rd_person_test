@@ -15,10 +15,17 @@ public class UIManager : MonoBehaviour
     public Text debugText2;
 
     public Text interactPrompt;
+    private bool istimerNotNull;
+
+    private void Start()
+    {
+        istimerNotNull = timer != null;
+    }
 
     private void Update()
     {
-        UpdateTimer();
+        if (istimerNotNull)
+            UpdateTimer();
     }
 
     private void UpdateTimer()

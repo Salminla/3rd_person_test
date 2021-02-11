@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     {
         if (gameManager.PlayerMovement)
             inputHandler.PlayerInput();
+        else
+            inputHandler.ZeroMovement();
 
         //DebugUIUpdate();
     }

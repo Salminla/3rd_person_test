@@ -69,11 +69,20 @@ namespace _project.Scripts.Player
                 smoothed = Mathf.Clamp01(Mathf.Abs(smoothed) - iDeceleration * Time.deltaTime) * Mathf.Sign(smoothed);
             return smoothed;
         }
+
+        public void ZeroMovement()
+        {
+            airMovement = Vector3.zero;
+            groundMovement = Vector3.zero;
+        }
+        
         private IEnumerator JumpBuffer()
         {
             yield return new WaitForSeconds(.1f);
             isJumping = false;
         }
+
+        #region New Input System Stuff
 
         public void OnMove(InputAction.CallbackContext context)
         {
@@ -89,5 +98,8 @@ namespace _project.Scripts.Player
         {
             throw new System.NotImplementedException();
         }
+
+        #endregion
+        
     }
 }
