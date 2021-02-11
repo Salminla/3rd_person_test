@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private BoxCollider endTrigger;
     [SerializeField] private Timer timer;
 
     public bool PlayerMovement { get; private set; }

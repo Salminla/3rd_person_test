@@ -2,7 +2,6 @@
 using _project.Scripts.Player;
 using UnityEngine;
 
-[RequireComponent(typeof(HingeJoint))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class Player : MonoBehaviour
 {
