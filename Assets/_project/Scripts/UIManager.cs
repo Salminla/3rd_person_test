@@ -1,19 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject gameUI;
+    [SerializeField] private GameObject endSreen;
     [SerializeField] private Timer timer;
-
-    [SerializeField] private TMP_Text timerText;
-
+    [SerializeField] private TMP_Text uiTimerText;
+    [SerializeField] private TMP_Text endTimeText;
+    
+    
     public Text debugText;
     public Text debugText2;
 
     public Text interactPrompt;
+
+    private void Update()
+    {
+        UpdateTimer();
+    }
+
+    private void UpdateTimer()
+    {
+        uiTimerText.text = timer.GetTimeString();
+    }
+
+    public void SetEndScreen(bool state)
+    {
+        gameUI.gameObject.SetActive(!state);
+        endSreen.gameObject.SetActive(state);
+        endTimeText.text = timer.GetTimeString();
+    }
+    
+    //Legacy code
+    #region legacy
 
     public void SetInteractPrompt(bool state)
     {
@@ -35,4 +56,6 @@ public class UIManager : MonoBehaviour
             Debug.LogError("Invalid debug UI num!");
         }
     }
+
+    #endregion
 }

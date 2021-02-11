@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 
-public class Timer
+public class Timer : MonoBehaviour
 {
     public float TimerCount { get; private set; }
-    private bool timerActive = false;
+    private bool timerActive;
     
     void Start()
     {
-        ResetTimer();
+        StartTimer();
     }
 
     void Update()
     {
         if (timerActive)
-        {
             TimerCount += Time.deltaTime;
-        }
     }
 
     public void StartTimer()
@@ -28,8 +26,20 @@ public class Timer
     {
         timerActive = false;
     }
+    public void ContinueTimer()
+    {
+        timerActive = true;
+    }
     public void ResetTimer()
     {
         TimerCount = 0f;
+    }
+
+    public string GetTimeString()
+    {
+        float minutes = Mathf.FloorToInt(TimerCount / 60);
+        string seconds = Mathf.FloorToInt(TimerCount % 60).ToString("00");
+        string milliSeconds = ((TimerCount % 1) * 100).ToString("00");
+        return minutes.ToString("00") + ":" + seconds + ":" + milliSeconds;
     }
 }

@@ -3,7 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private BoxCollider endTrigger;
+    [SerializeField] private Timer timer;
+
+    public bool PlayerMovement { get; private set; }
+    public bool LevelEnd { get; private set; }
     public int Score { get; private set; }
+
+    private void Start()
+    {
+        PlayerMovement = true;
+    }
 
     void Update()
     {
@@ -19,8 +30,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetPlayerMovement(bool state)
+    {
+        PlayerMovement = false;
+    }
     public void IncreaseScore()
     {
         Score++;
+    }
+    public void EndLevel()
+    {
+        SetPlayerMovement(false);
+        LevelEnd = true;
+        uiManager.SetEndScreen(true);
+        timer.StopTimer();
     }
 }

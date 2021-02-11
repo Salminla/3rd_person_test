@@ -23,11 +23,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +41,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -50,9 +51,11 @@
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/test/Rope.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jINKsI3zO8Mg9xjkgUeyt8Gr3z" />
@@ -129,6 +132,8 @@
       <workItem from="1611843548735" duration="2655000" />
       <workItem from="1612353568533" duration="6347000" />
       <workItem from="1612445936193" duration="2672000" />
+      <workItem from="1612559594511" duration="2952000" />
+      <workItem from="1612945976554" duration="5996000" />
     </task>
     <servers />
   </component>

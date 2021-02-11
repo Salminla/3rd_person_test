@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // References
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private InputHandler inputHandler;
     [SerializeField] private MovementHandler movementHandler;
     [SerializeField] private Material playerMaterial;
@@ -24,7 +25,8 @@ public class Player : MonoBehaviour
     //All the Input capturing done in Update
     private void Update()
     {
-        inputHandler.PlayerInput();
+        if (gameManager.PlayerMovement)
+            inputHandler.PlayerInput();
 
         //DebugUIUpdate();
     }
@@ -34,7 +36,8 @@ public class Player : MonoBehaviour
     {
         movementHandler.PlayerMovement();
     }
-
+    
+    // NOT IN USE
     private void OnTriggerEnter(Collider other)
     {
         var interactable = other.GetComponent<IInteractable>();
