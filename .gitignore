@@ -60,3 +60,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 Assets/Firebase/google-services.json
+Assets/StreamingAssets/google-services-desktop.json
