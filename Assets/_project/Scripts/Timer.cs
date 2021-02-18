@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
     {
         float minutes = Mathf.FloorToInt(TimerCount / 60);
         string seconds = Mathf.FloorToInt(TimerCount % 60).ToString("00");
-        string milliSeconds = ((TimerCount % 1) * 100).ToString("00");
+        string milliSeconds = ((TimerCount % 1) * 99).ToString("00");
         return minutes.ToString("00") + ":" + seconds + ":" + milliSeconds;
     }
 }

@@ -7,6 +7,7 @@ public class TestLevelSelect : MonoBehaviour
     [SerializeField] private Button level1Button;
     [SerializeField] private Button level2Button;
     [SerializeField] private Button level3Button;
+    [SerializeField] private Button level4Button;
     [SerializeField] private Button exitButton;
     
     void Start()
@@ -14,6 +15,7 @@ public class TestLevelSelect : MonoBehaviour
         level1Button.onClick.AddListener(() => SceneManager.LoadScene(1));
         level2Button.onClick.AddListener(() => SceneManager.LoadScene(2));
         level3Button.onClick.AddListener(() => SceneManager.LoadScene(3));
+        level4Button.onClick.AddListener(() => SceneManager.LoadScene(4));
         exitButton.onClick.AddListener(Application.Quit);
     }
 }

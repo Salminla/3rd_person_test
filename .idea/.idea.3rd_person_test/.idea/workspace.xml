@@ -20,183 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08e4b58-a45e-4b48-9a2a-26cbca715751" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/GameManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Firebase/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firebase/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Input/InputSystem.inputsettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Input/InputSystem.inputsettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/DirectionSign.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/DirectionSign.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightPoleEmis.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightPoleEmis.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStrip.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStrip.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/LightingData.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-0_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-10_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-11_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-12_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-13_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-14_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-15_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-16_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-17_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-18_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-19_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-1_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-20_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-21_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-22_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-23_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-24_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-25_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-26_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-27_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-28_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-29_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-2_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-30_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-31_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-32_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-33_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-34_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-3_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-4_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-5_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-6_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-7_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-8_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/Lightmap-9_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2/ReflectionProbe-0.exr.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/LightingData.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-0_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-1_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/Lightmap-2_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Testing/TestShader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Shaders/Testing/TestShader.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,24 +55,42 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseLeaders.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseAuth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/etc/HelperFunctions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Firebase/Confirm.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/_project/Shaders/Compute/ComputeShaderTest.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/test/Rope.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
+      <option value="$PROJECT_DIR$/Assets/Firebase/Confirm.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseAuth.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" />
+      <option value="$PROJECT_DIR$/Assets/Firebase/google-services.json" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/HelperFunctions.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseLeaders.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jINKsI3zO8Mg9xjkgUeyt8Gr3z" />
@@ -303,7 +169,11 @@
       <workItem from="1612445936193" duration="2672000" />
       <workItem from="1612559594511" duration="2952000" />
       <workItem from="1612945976554" duration="5996000" />
-      <workItem from="1613071169352" duration="2323000" />
+      <workItem from="1613071169352" duration="5483000" />
+      <workItem from="1613130357939" duration="1316000" />
+      <workItem from="1613221861346" duration="1672000" />
+      <workItem from="1613555637726" duration="11049000" />
+      <workItem from="1613673272796" duration="7421000" />
     </task>
     <servers />
   </component>

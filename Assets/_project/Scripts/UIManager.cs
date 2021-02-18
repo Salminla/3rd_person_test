@@ -6,11 +6,11 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject endSreen;
+    [SerializeField] private GameObject pauseScreen;
     [SerializeField] private Timer timer;
     [SerializeField] private TMP_Text uiTimerText;
     [SerializeField] private TMP_Text endTimeText;
-    
-    
+
     public Text debugText;
     public Text debugText2;
 
@@ -39,7 +39,11 @@ public class UIManager : MonoBehaviour
         endSreen.gameObject.SetActive(state);
         endTimeText.text = timer.GetTimeString();
     }
-    
+
+    public void SetPauseScreen(bool state)
+    {
+        pauseScreen.gameObject.SetActive(state);
+    }
     //Legacy code
     #region legacy
 
