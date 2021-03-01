@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -14,6 +15,17 @@ public class CubeGenerator : MonoBehaviour
     public float maxHeight = 10f;
     public float minHeight = 1f;
 
+    [Range(0, 100)]
+    public int cubeSpawnChance = 100;
+    
+    [Header("Color values")]
+    [Range(0, 1)] public float colorHueMin = 0.0f;
+    [Range(0, 1)] public float colorHueMax = 0.8f;
+    [Range(0, 1)] public float colorSatMin = 0f;
+    [Range(0, 1)] public float colorSatMax = 1f;
+    [Range(0, 1)] public float colorValMin = 0f;
+    [Range(0, 1)] public float colorValMax = 1f;
+
     private bool generated = false;
     private List<GameObject> objects;
     
@@ -22,6 +34,15 @@ public class CubeGenerator : MonoBehaviour
         //CreateCubes();
         
     }
+
+    private void OnValidate()
+    {
+        if (colorHueMax < colorHueMin)
+        {
+            colorHueMax = colorHueMin;
+        }
+    }
+
     [ContextMenu("Generate")]
     public void GenerateCubes()
     {
@@ -42,7 +63,10 @@ public class CubeGenerator : MonoBehaviour
         {
             for (int z = 0; z < count; z++)
             {
-                CreateCube(x * scale * seperation, z * scale * seperation);
+                if (Random.Range(0, 100) <= cubeSpawnChance)
+                {
+                    CreateCube(x * scale * seperation, z * scale * seperation);
+                }
             }
         }
         generated = true;
@@ -70,7 +94,7 @@ public class CubeGenerator : MonoBehaviour
         transformPosition = new Vector3(position.x,randomHeight/2,position.z);
         cube.transform.position = transformPosition;
 
-        Color color = Random.ColorHSV(0.2f, 0.8f);
+        Color color = Random.ColorHSV(colorHueMin, colorHueMax, colorSatMin, colorSatMax, colorValMin, colorValMax);
         tempMaterial.color = color;
         cube.GetComponent<MeshRenderer>().sharedMaterial = tempMaterial;
         

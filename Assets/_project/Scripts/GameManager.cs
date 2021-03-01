@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -6,7 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Timer timer;
     [SerializeField] private FirebaseLeaders leaders;
-
+    [SerializeField] private TMP_InputField userNameInput;
+    
     public bool PlayerMovement { get; private set; }
     public bool LevelEnd { get; private set; }
     public bool GamePaused { get; private set; }
@@ -51,13 +54,15 @@ public class GameManager : MonoBehaviour
         {
             GamePaused = true;
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
             uiManager.SetPauseScreen(true);
             return;
         }
-
+        
         windowFocus = true;
         GamePaused = false;
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         uiManager.SetPauseScreen(false);
     }
 
@@ -74,9 +79,14 @@ public class GameManager : MonoBehaviour
         SetPlayerMovement(false);
         LevelEnd = true;
 
-        if (leaders != null)
-            leaders.PlayerFinished("TestiTeppo", timer.TimerCount);
-        
+        if (leaders != null && userNameInput != null)
+        {
+            String playerName;
+            playerName = userNameInput.text == "" ? "Anonomyous" : userNameInput.text;
+                
+            leaders.PlayerFinished(playerName, timer.TimerCount);
+        }
+
         if (uiManager != null)
             uiManager.SetEndScreen(true);
         

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SwingRope : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class SwingRope : MonoBehaviour
     Vector3 ropePoint;
     
     float lineWidthOrig;
+
+    private bool ropeEnabled;
+    private Vector3 ropeEndPoint;
+    private float maxDistance;
 
     private void Start()
     {
@@ -75,7 +80,10 @@ public class SwingRope : MonoBehaviour
             spring.spring = ropeStiffness;
 
             float distanceFromPoint = Vector3.Distance(player.transform.position, hit.point);
-
+            maxDistance = distanceFromPoint;
+            ropeEndPoint = hit.point;
+            ropeEnabled = true;
+            
             spring.maxDistance = distanceFromPoint;
             spring.minDistance = distanceFromPoint * 0.15f;
 
@@ -83,6 +91,7 @@ public class SwingRope : MonoBehaviour
         }
         if (Input.GetButtonUp("Fire1"))
         {
+            ropeEnabled = false;
             StartCoroutine(LineFade());
             Destroy(player.GetComponent<SpringJoint>());
         }
@@ -94,10 +103,25 @@ public class SwingRope : MonoBehaviour
             StopCoroutine(LineFade());
             line.enabled = true;
             line.SetPosition(0, ropeOriginPoint.transform.position);
+            UpdateRopeColor();
             StartCoroutine(LineDraw());
         }
     }
 
+    private float GetRopeLength()
+    {
+        return (player.transform.position - ropeEndPoint).magnitude / maxDistance;
+    }
+
+    private void UpdateRopeColor()
+    {
+        // TODO: This is pretty bad, fix pls
+        Color newColor = Color.HSVToRGB(1f, 1f, Mathf.Clamp01(Mathf.Pow(GetRopeLength(), 100)));
+        line.material.color = newColor;
+        line.material.SetColor("_EmissionColor", newColor * 2);
+        //new Color(GetRopeLength() * 20, 20, 20);
+    }
+    
     IEnumerator LineDraw()
     {
         line.startWidth = lineWidthOrig;

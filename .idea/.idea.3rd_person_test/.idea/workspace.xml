@@ -20,31 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08e4b58-a45e-4b48-9a2a-26cbca715751" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3rd_person_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Firebase/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firebase/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Input/InputSystem.inputsettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Input/InputSystem.inputsettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/DirectionSign.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/DirectionSign.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightPoleEmis.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightPoleEmis.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStrip.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStrip.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/LightStripScroll.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/Player/Rope.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Materials/Player/Rope.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl1/Cube.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl1/Cube.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl1/Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl1/Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/DirectionSign.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/DirectionSign.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/ProcBuilding.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Materials/TestLvl4/ProcBuilding.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Buildings/StartPlatform.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Buildings/StartPlatform.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/LightPole.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/LightPole.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Prefabs/Required/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestLevel4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scenes/TestMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_project/Shaders/Testing/VelocityCurve.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_project/Shaders/Testing/VelocityCurve.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,28 +70,32 @@
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseAuth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/etc/HelperFunctions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/Menu/PanelGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Firebase/Confirm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_project/Scripts/Menu/TitleGrabber.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/_project/Shaders/Compute/ComputeShaderTest.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/test/Rope.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/InputHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
       <option value="$PROJECT_DIR$/Assets/Firebase/Confirm.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Player/PlayerVisuals.cs" />
       <option value="$PROJECT_DIR$/Assets/Firebase/google-services.json" />
-      <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/LevelEndPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/HelperFunctions.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/FireBase/FirebaseLeaders.cs" />
       <option value="$PROJECT_DIR$/Assets/_project/Scripts/etc/TestLevelSelect.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Menu/TitleGrabber.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/Menu/PanelGroup.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/SwingRope.cs" />
+      <option value="$PROJECT_DIR$/Assets/_project/Scripts/CubeGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jINKsI3zO8Mg9xjkgUeyt8Gr3z" />
@@ -174,6 +179,9 @@
       <workItem from="1613221861346" duration="1672000" />
       <workItem from="1613555637726" duration="11049000" />
       <workItem from="1613673272796" duration="7421000" />
+      <workItem from="1613775818794" duration="1895000" />
+      <workItem from="1613844140797" duration="6775000" />
+      <workItem from="1614513966620" duration="5850000" />
     </task>
     <servers />
   </component>

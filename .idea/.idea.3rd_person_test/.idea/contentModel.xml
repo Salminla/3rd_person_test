@@ -36,6 +36,11 @@
             </e>
             <e p="GameManager.cs" t="Include" />
             <e p="LevelEndPoint.cs" t="Include" />
+            <e p="Menu" t="Include">
+              <e p="FlexibleGridLayout.cs" t="Include" />
+              <e p="PanelGroup.cs" t="Include" />
+              <e p="TitleGrabber.cs" t="Include" />
+            </e>
             <e p="Player" t="Include">
               <e p="InputHandler.cs" t="Include" />
               <e p="MovementHandler.cs" t="Include" />

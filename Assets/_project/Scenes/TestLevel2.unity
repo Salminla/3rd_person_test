@@ -13070,6 +13070,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 370213950}
+    - target: {fileID: 2021087978130293887, guid: 454faf52b19ac9a44a2fb96e6851c564,
+        type: 3}
+      propertyPath: ropeStiffness
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4208341839469561823, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: mainCamera
