@@ -71,6 +71,7 @@
             </e>
           </e>
         </e>
+        <e p="DirectionSign.cs" t="Include" />
         <e p="ExternalDependencyManager" t="Include">
           <e p="Editor" t="Include">
             <e p="external-dependency-manager_version-1.2.162_manifest.txt" t="Include" />

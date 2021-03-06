@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_InputField userNameInput;
     
     public bool PlayerMovement { get; private set; }
+    public bool CameraMovement { get; private set; }
     public bool LevelEnd { get; private set; }
     public bool GamePaused { get; private set; }
     public int Score { get; private set; }
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         PlayerMovement = true;
+        CameraMovement = true;
         windowFocus = Application.isFocused;
     }
 
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
     public void EndLevel()
     {
         SetPlayerMovement(false);
+        CameraMovement = false;
         LevelEnd = true;
 
         if (leaders != null && userNameInput != null)

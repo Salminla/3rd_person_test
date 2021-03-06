@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1532993655}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
   timer: {fileID: 1532993655}
+  leaders: {fileID: 0}
+  userNameInput: {fileID: 0}
 --- !u!114 &1532993655
 MonoBehaviour:
   m_ObjectHideFlags: 0

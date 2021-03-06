@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.UIElements;
 
 public class SwingRope : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private UIManager uiManager;
     [SerializeField] private GameObject pointerObject;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject ropeOriginPoint;
 
     [SerializeField] private float ropeStiffness = 300;
+    [SerializeField] private float ropeRetractSpeed = 4f;
 
     LineRenderer line;
 
+    private Transform targetTransform;
     Vector3 ropePoint;
     
     float lineWidthOrig;
@@ -50,12 +53,20 @@ public class SwingRope : MonoBehaviour
         {
             if (!pointerObject.activeSelf)
                 pointerObject.SetActive(true);
+            if (uiManager != null && !uiManager.ReticuleTarget)
+            {
+                uiManager.SwitchReticule();
+            }
             pointerObject.transform.position = hit.point + (hit.normal / 16);
         }
         else
         {
             if (pointerObject.activeSelf)
                 pointerObject.SetActive(false);
+            if (uiManager != null && uiManager.ReticuleTarget)
+            {
+                uiManager.SwitchReticule();
+            }
         }
     }
     private void SpringRope()
@@ -88,13 +99,31 @@ public class SwingRope : MonoBehaviour
             spring.minDistance = distanceFromPoint * 0.15f;
 
             spring.damper = 7f;
+
+            targetTransform = hit.transform;
+        }
+
+        if (targetTransform != null)
+        {
+            
+        }
+        if (Input.GetButton("Fire2") && player.GetComponent<SpringJoint>() != null)
+        {
+            RetractRope();
         }
         if (Input.GetButtonUp("Fire1"))
         {
             ropeEnabled = false;
+            targetTransform = null;
             StartCoroutine(LineFade());
             Destroy(player.GetComponent<SpringJoint>());
         }
+    }
+
+    private void RetractRope()
+    {
+        if (maxDistance > 1f) maxDistance -= ropeRetractSpeed * Time.deltaTime;
+        player.GetComponent<SpringJoint>().maxDistance = maxDistance;
     }
     private void DrawRope()
     {

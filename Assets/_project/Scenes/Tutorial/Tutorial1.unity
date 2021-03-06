@@ -9434,6 +9434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021087978130293887, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 10921956}
+    - target: {fileID: 2021087978130293887, guid: 454faf52b19ac9a44a2fb96e6851c564,
+        type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1463669127}
@@ -23447,6 +23452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7642057620367554010, guid: edb06285749b78d43b7710f4cc772c11,
         type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1532993653}
+    - target: {fileID: 7642057620367554010, guid: edb06285749b78d43b7710f4cc772c11,
+        type: 3}
       propertyPath: CameraZoomPoint
       value: 
       objectReference: {fileID: 1103885227}
@@ -27722,19 +27732,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7703008433137309311, guid: 2dd2a033760274242bce58a956056bbf,
         type: 3}
-      propertyPath: leaders
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7703008433137309311, guid: 2dd2a033760274242bce58a956056bbf,
-        type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 10921956}
-    - target: {fileID: 7703008433137309311, guid: 2dd2a033760274242bce58a956056bbf,
-        type: 3}
-      propertyPath: userNameInput
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dd2a033760274242bce58a956056bbf, type: 3}
 --- !u!114 &1359770723 stripped

@@ -10,12 +10,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private TMP_Text uiTimerText;
     [SerializeField] private TMP_Text endTimeText;
+    [SerializeField] private GameObject reticuleNormal;
+    [SerializeField] private GameObject reticuleTarget;
 
     public Text debugText;
     public Text debugText2;
 
     public Text interactPrompt;
     private bool istimerNotNull;
+    
+    public bool ReticuleTarget { get; private set; }
 
     private void Start()
     {
@@ -43,6 +47,20 @@ public class UIManager : MonoBehaviour
     public void SetPauseScreen(bool state)
     {
         pauseScreen.gameObject.SetActive(state);
+    }
+
+    public void SwitchReticule()
+    {
+        if (!ReticuleTarget)
+        {
+            reticuleTarget.gameObject.SetActive(true);
+            ReticuleTarget = true;
+        }
+        else
+        {
+            reticuleTarget.gameObject.SetActive(false);
+            ReticuleTarget = false;
+        }
     }
     //Legacy code
     #region legacy

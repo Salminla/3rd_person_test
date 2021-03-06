@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  uiManager: {fileID: 0}
   pointerObject: {fileID: 2021087977211857018}
   player: {fileID: 2021087978049646654}
   ropeOriginPoint: {fileID: 2021087978130293885}

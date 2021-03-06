@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1786922637, guid: edbb9bbd78a96684bab7daffbffed612, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3613922071072689385, guid: edbb9bbd78a96684bab7daffbffed612,
         type: 3}
@@ -2681,6 +2681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2021087978130293887, guid: 454faf52b19ac9a44a2fb96e6851c564,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 1415363726}
     - target: {fileID: 2021087978130293887, guid: 454faf52b19ac9a44a2fb96e6851c564,
         type: 3}
       propertyPath: mainCamera

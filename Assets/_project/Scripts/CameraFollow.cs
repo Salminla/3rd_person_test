@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]
-    GameObject CameraFollowObject;
-    [SerializeField]
-    GameObject CameraZoomPoint;
-    [SerializeField]
-    bool invertedVertical = true;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] GameObject CameraFollowObject;
+    //[SerializeField]
+    //GameObject CameraZoomPoint;
+    [SerializeField] bool invertedVertical = true;
 
     Vector3 camInitPos;
 
@@ -51,13 +50,23 @@ public class CameraFollow : MonoBehaviour
 
         rotX = Mathf.Clamp(rotX, -80, 70);
 
-        Quaternion localRotation = Quaternion.Euler(0.0f, rotY, rotX);
-        transform.rotation = localRotation;
-
+        if (gameManager != null)
+        {
+            if (!gameManager.CameraMovement) return;
+            Quaternion localRotation = Quaternion.Euler(0.0f, rotY, rotX);
+            transform.rotation = localRotation;
+        }
+        else
+        {
+            Quaternion localRotation = Quaternion.Euler(0.0f, rotY, rotX);
+            transform.rotation = localRotation;
+        }
+        /*
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            Camera.main.transform.position = CameraZoomPoint.transform.position;
+            //Camera.main.transform.position = CameraZoomPoint.transform.position;
         }
+        */
     }
 
     void LateUpdate()
@@ -70,9 +79,9 @@ public class CameraFollow : MonoBehaviour
         Transform target = CameraFollowObject.transform;
         //Move towards
         float step = 120 * Time.deltaTime;
-        if (!Input.GetKey(KeyCode.Mouse1))
-        {
+        //if (!Input.GetKey(KeyCode.Mouse1))
+        //{
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-        }    
+        //}    
     }
 }
